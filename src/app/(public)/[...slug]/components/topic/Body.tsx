@@ -243,9 +243,6 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
                 {
                     posts.map((d: any, index) => (
                         d.slug[0] === topic.slug[0] && (
-                            // <div key={d._id}>
-                            //     {d.topic}
-                            // </div>
                             <Grid key={index} size={{ xs: 12, sm: 6 }}>
                                 <Box
                                     sx={{
@@ -256,9 +253,6 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
                                         height: '100%',
                                     }}
                                 >
-                                    {/* <Typography gutterBottom variant="caption" component="div">
-                                        {d.topic}
-                                    </Typography> */}
 
                                     <TitleTypography
                                         gutterBottom
