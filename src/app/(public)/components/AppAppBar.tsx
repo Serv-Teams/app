@@ -80,12 +80,15 @@ export default function AppAppBar() {
                             <Button variant="text" color="info" size="small">
                                 Kesehatan
                             </Button>
-                            <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                                Gaya Hidup
+                            <Button variant="text" color="info" size="small" href='/pemasaran'>
+                                Pemasaran
                             </Button>
-                            <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+                            <Button variant="text" color="info" size="small">
                                 Travel
                             </Button>
+                            {/* <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+                                Travel
+                            </Button> */}
                         </Box>
                     </Box>
                     <Box

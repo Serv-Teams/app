@@ -9,6 +9,7 @@ import Pagination from '@mui/material/Pagination';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
+import { Link } from '@mui/material';
 
 const articleInfo = [
     {
@@ -137,7 +138,14 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
     },
 }));
 
-function Author({ authors }: { authors: { name: string; avatar: string }[] }) {
+function Author(
+    {
+        // authors,
+        date }: {
+            // authors: { name: string; avatar: string }[],
+            date: any
+        }
+) {
     return (
         <Box
             sx={{
@@ -151,7 +159,7 @@ function Author({ authors }: { authors: { name: string; avatar: string }[] }) {
             <Box
                 sx={{ display: 'flex', flexDirection: 'row', gap: 1, alignItems: 'center' }}
             >
-                <AvatarGroup max={3}>
+                {/* <AvatarGroup max={3}>
                     {authors.map((author, index) => (
                         <Avatar
                             key={index}
@@ -163,9 +171,9 @@ function Author({ authors }: { authors: { name: string; avatar: string }[] }) {
                 </AvatarGroup>
                 <Typography variant="caption">
                     {authors.map((author) => author.name).join(', ')}
-                </Typography>
+                </Typography> */}
             </Box>
-            <Typography variant="caption">July 14, 2021</Typography>
+            <Typography variant="caption">{date}</Typography>
         </Box>
     );
 }
@@ -183,11 +191,18 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
         setFocusedCardIndex(null);
     };
 
+    let fmt = new Intl.DateTimeFormat('id-ID', {
+        dateStyle: "long",
+        timeStyle: "short",
+        timeZone: "UTC",
+        hour12: false
+    });
+
     return (
         <>
 
             <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
-                {articleInfo.map((article, index) => (
+                {/* {articleInfo.map((article, index) => (
                     <Grid key={index} size={{ xs: 12, sm: 6 }}>
                         <Box
                             sx={{
@@ -219,10 +234,68 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
                                 {article.description}
                             </StyledTypography>
 
-                            <Author authors={article.authors} />
+                            <Author
+                                authors={article.authors}
+                            />
                         </Box>
                     </Grid>
-                ))}
+                ))} */}
+                {
+                    posts.map((d: any, index) => (
+                        d.slug[0] === topic.slug[0] && (
+                            // <div key={d._id}>
+                            //     {d.topic}
+                            // </div>
+                            <Grid key={index} size={{ xs: 12, sm: 6 }}>
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'space-between',
+                                        gap: 1,
+                                        height: '100%',
+                                    }}
+                                >
+                                    {/* <Typography gutterBottom variant="caption" component="div">
+                                        {d.topic}
+                                    </Typography> */}
+
+                                    <TitleTypography
+                                        gutterBottom
+                                        variant="h6"
+                                        onFocus={() => handleFocus(index)}
+                                        onBlur={handleBlur}
+                                        tabIndex={0}
+                                        className={focusedCardIndex === index ? 'Mui-focused' : ''}
+
+                                    >
+                                        {/* {d.title}
+                                        <NavigateNextRoundedIcon
+                                            className="arrow"
+                                            sx={{ fontSize: '1rem' }}
+                                        /> */}
+                                        <Link href={`/teknologi/${d.slug[1]}`} underline="none">
+                                            {d.title}
+                                            <NavigateNextRoundedIcon
+                                                className="arrow"
+                                                sx={{ fontSize: '1rem' }}
+                                            />
+                                        </Link>
+                                    </TitleTypography>
+                                    <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                                        {d.content}
+                                    </StyledTypography>
+
+                                    <Author
+                                        // authors={article.authors}
+                                        date={fmt.format(new Date(d.createdAt))}
+                                    />
+                                </Box>
+                            </Grid>
+                        )
+                    )
+                    )
+                }
             </Grid>
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
                 <Pagination hidePrevButton hideNextButton count={10} boundaryCount={10} />
