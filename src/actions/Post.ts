@@ -75,8 +75,8 @@ export async function upsertPost(prevState: any, formData: FormData) {
         );
     }
 
-    revalidatePath('/');
-    redirect('/');
+    revalidatePath('/dashboard/posts');
+    redirect('/dashboard/posts');
 }
 
 
@@ -84,6 +84,6 @@ export async function deletePost(id: string) {
     const db = client.db("blog");
     await db.collection("posts").deleteOne({ _id: new ObjectId(id) });
 
-    revalidatePath('/');
-    redirect('/');
+    revalidatePath('/dashboard/posts');
+    redirect('/dashboard/posts');
 }
