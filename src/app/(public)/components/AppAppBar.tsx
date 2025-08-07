@@ -15,6 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Sitemark from './SitemarkIcon';
 import Link from 'next/link';
+import ThemeToggleButton from '../../../components/ModeSwitch';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
@@ -31,6 +32,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     boxShadow: (theme.vars || theme).shadows[1],
     padding: '8px 12px',
 }));
+
 
 export default function AppAppBar() {
     const [open, setOpen] = React.useState(false);
@@ -104,6 +106,7 @@ export default function AppAppBar() {
                         <Button color="primary" variant="contained" size="small">
                             Sign up
                         </Button>
+                        <ThemeToggleButton />
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
                         <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
@@ -149,6 +152,9 @@ export default function AppAppBar() {
                                     <Button color="primary" variant="outlined" fullWidth>
                                         Sign in
                                     </Button>
+                                </MenuItem>
+                                <MenuItem>
+                                    <ThemeToggleButton />
                                 </MenuItem>
                             </Box>
                         </Drawer>
