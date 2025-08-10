@@ -30,7 +30,7 @@ export default function Body({ content, source }: { content: any, source: any[] 
         <>
             <MDXRemote components={components} source={content} />
             <Typography>
-                Sumber: {source.join(", ")}
+                Sumber: <Link href={source}>{source.join(", ")}</Link>
             </Typography>
         </>
     );
