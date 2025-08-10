@@ -49,7 +49,7 @@ export default async function Page(
         return (
             <>
                 <HeadPost title={data.title} />
-                <BodyPost content={data.content} />
+                <BodyPost content={data.content} source={data.source} />
             </>
         )
     } else if (slug.length === 1) {

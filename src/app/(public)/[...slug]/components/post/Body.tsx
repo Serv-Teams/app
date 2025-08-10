@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote-client/rsc'
-import { Card } from '@mui/material';
+import { Card, Typography } from '@mui/material';
 
 const Selengkapnya = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -25,8 +25,13 @@ const components = {
     Selengkapnya
 }
 
-export default function Body({ content }: { content: any }) {
+export default function Body({ content, source }: { content: any, source: any[] }) {
     return (
-        <MDXRemote components={components} source={content} />
+        <>
+            <MDXRemote components={components} source={content} />
+            <Typography>
+                {source}
+            </Typography>
+        </>
     );
 }
