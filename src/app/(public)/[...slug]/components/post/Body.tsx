@@ -29,9 +29,18 @@ export default function Body({ content, source }: { content: any, source: any[] 
     return (
         <>
             <MDXRemote components={components} source={content} />
-            <Typography>
+            {/* <Typography>
                 Sumber: <Link href={source}>{source.join(", ")}</Link>
-            </Typography>
+            </Typography> */}
+            <ul>
+                {source.map((s) => (
+                <li key={s}>
+                    <Link href={s}>
+                    {s}
+                    </Link>
+                </li>
+                ))}
+            </ul>
         </>
     );
 }
