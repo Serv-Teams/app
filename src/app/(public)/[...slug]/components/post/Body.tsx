@@ -30,7 +30,7 @@ export default function Body({ content, source }: { content: any, source: any[] 
         <>
             <MDXRemote components={components} source={content} />
             <Typography>
-                {source}
+                {source.join(", ")}
             </Typography>
         </>
     );
