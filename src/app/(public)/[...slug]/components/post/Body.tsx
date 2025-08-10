@@ -34,9 +34,9 @@ export default function Body({ content, source }: { content: any, source: any[] 
                  <ul>
                     {source.map((s) => (
                     <li key={s}>
-                        <Link href={s}>
+                        <a href={s} target="_blank" rel="noreferrer noopener">
                         {s}
-                        </Link>
+                        </a>
                     </li>
                     ))}
                 </ul>
