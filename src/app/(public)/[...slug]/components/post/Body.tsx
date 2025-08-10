@@ -31,16 +31,16 @@ export default function Body({ content, source }: { content: any, source: any[] 
             <MDXRemote components={components} source={content} />
             <Typography>
                 Sumber:
+                 <ul>
+                    {source.map((s) => (
+                    <li key={s}>
+                        <Link href={s}>
+                        {s}
+                        </Link>
+                    </li>
+                    ))}
+                </ul>
             </Typography>
-            <ul>
-                {source.map((s) => (
-                <li key={s}>
-                    <Link href={s}>
-                    {s}
-                    </Link>
-                </li>
-                ))}
-            </ul>
         </>
     );
 }
