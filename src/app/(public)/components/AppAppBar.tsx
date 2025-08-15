@@ -100,12 +100,12 @@ export default function AppAppBar() {
                             alignItems: 'center',
                         }}
                     >
-                        <Button color="primary" variant="text" size="small">
+                        {/* <Button color="primary" variant="text" size="small">
                             Sign in
                         </Button>
                         <Button color="primary" variant="contained" size="small">
                             Sign up
-                        </Button>
+                        </Button> */}
                         <ThemeToggleButton />
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
@@ -143,7 +143,7 @@ export default function AppAppBar() {
                                 <MenuItem>Gaya Hidup</MenuItem>
                                 <MenuItem>Travel</MenuItem>
                                 <Divider sx={{ my: 3 }} />
-                                <MenuItem>
+                                {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
                                         Sign up
                                     </Button>
@@ -152,7 +152,7 @@ export default function AppAppBar() {
                                     <Button color="primary" variant="outlined" fullWidth>
                                         Sign in
                                     </Button>
-                                </MenuItem>
+                                </MenuItem> */}
                                 <MenuItem>
                                     <ThemeToggleButton />
                                 </MenuItem>

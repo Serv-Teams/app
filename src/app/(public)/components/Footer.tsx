@@ -19,7 +19,7 @@ function Copyright() {
         <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
             {'Copyright © '}
             <Link color="text.secondary" href="https://mui.com/">
-                Sitemark
+                Serv
             </Link>
             &nbsp;
             {new Date().getFullYear()}
@@ -106,22 +106,28 @@ export default function Footer() {
                         }}
                     >
                         <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-                            Product
+                            Topik
                         </Typography>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            Features
+                        <Link color="text.secondary" variant="body2" href="/ekonomi">
+                            Ekonomi
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            Testimonials
+                        <Link color="text.secondary" variant="body2" href="/politik">
+                            Politik
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            Highlights
+                        <Link color="text.secondary" variant="body2" href="/teknologi">
+                            Teknologi
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            Pricing
+                        <Link color="text.secondary" variant="body2" href="/olahraga">
+                            Olahraga
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            FAQs
+                        <Link color="text.secondary" variant="body2" href="/kesehatan">
+                            Kesehatan
+                        </Link>
+                        <Link color="text.secondary" variant="body2" href="/pemasaran">
+                            Pemasaran
+                        </Link>
+                        <Link color="text.secondary" variant="body2" href="/travel">
+                            Travel
                         </Link>
                     </Box>
                     <Box
@@ -132,16 +138,13 @@ export default function Footer() {
                         }}
                     >
                         <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-                            Company
+                            Perusahaan
                         </Typography>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            About us
+                        <Link color="text.secondary" variant="body2" href="https://serv-adv.vercel.app/tentang-kami">
+                            Tentang Kami
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            Careers
-                        </Link>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            Press
+                        <Link color="text.secondary" variant="body2" href="https://serv-adv.vercel.app">
+                            Bisnis
                         </Link>
                     </Box>
                     <Box
@@ -176,7 +179,7 @@ export default function Footer() {
                     }}
                 >
                     <div>
-                        <Link color="text.secondary" variant="body2" href="#">
+                        {/* <Link color="text.secondary" variant="body2" href="#">
                             Privacy Policy
                         </Link>
                         <Typography sx={{ display: 'inline', mx: 0.5, opacity: 0.5 }}>
@@ -184,7 +187,7 @@ export default function Footer() {
                         </Typography>
                         <Link color="text.secondary" variant="body2" href="#">
                             Terms of Service
-                        </Link>
+                        </Link> */}
                         <Copyright />
                     </div>
                     <Stack
