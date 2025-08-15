@@ -9,9 +9,6 @@ import AdSense from './components/AdSense';
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <AdSense Id="ca-pub-5669338318384920" />
-      </head>
       <body>
         <InitColorSchemeScript attribute="class" />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
@@ -22,6 +19,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
+      <AdSense Id="ca-pub-5669338318384920" />
     </html>
   );
 }
