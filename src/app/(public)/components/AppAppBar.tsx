@@ -15,7 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Sitemark from './SitemarkIcon';
 import Link from 'next/link';
-import ThemeToggleButton from '../../../components/ModeSwitch';
+import ThemeToggleButton from '../../components/ModeSwitch';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',

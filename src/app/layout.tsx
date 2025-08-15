@@ -4,6 +4,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import theme from '@/theme';
+import AdSense from './components/AdSense';
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -18,6 +19,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
+      <AdSense Id="ca-pub-5669338318384920" />
     </html>
   );
 }
