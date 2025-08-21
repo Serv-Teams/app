@@ -31,17 +31,18 @@ export default function Body({ content, source }: { content: any, source: any[] 
             <MDXRemote components={components} source={content} />
             <Typography>
                 Sumber:
-                <ul>
-                    {
-                        source.map((s) => (
-                            <li key={s}>
-                                <a href={s} target="_blank" rel="noreferrer noopener">
-                                    {s}
-                                </a>
-                            </li>
-                        ))}
-                </ul>
+
             </Typography>
+            <ul>
+                {
+                    source.map((s) => (
+                        <li key={s}>
+                            <a href={s} target="_blank" rel="noreferrer noopener">
+                                <Typography>{s}</Typography>
+                            </a>
+                        </li>
+                    ))}
+            </ul>
         </>
     );
 }
