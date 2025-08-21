@@ -58,15 +58,15 @@ export default function AppAppBar() {
                     <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
 
                         {/* <Sitemark /> */}
+                        <Button variant="text" color='info' href='/' startIcon={<Box component="img" src="/logo.png" sx={{ width: 24, height: 24 }} />}>
+                            Serv
+                        </Button>
 
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             {/* jika user otentikasi */}
                             {/* <Button variant="text" color="info" size="small">
                                 Topik Anda
                             </Button> */}
-                            <Button variant="text" color='info' href='/' startIcon={<Box component="img" src="/logo.png" sx={{ width: 24, height: 24 }} />}>
-                                Serv
-                            </Button>
                             <Button variant="text" color="info" size="small">
                                 Ekonomi
                             </Button>

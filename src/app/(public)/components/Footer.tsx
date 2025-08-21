@@ -13,6 +13,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 import SitemarkIcon from './SitemarkIcon';
+import { Instagram } from '@mui/icons-material';
+import Image from 'next/image';
 
 function Copyright() {
     return (
@@ -58,18 +60,19 @@ export default function Footer() {
                         }}
                     >
                         <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-                            <SitemarkIcon />
+                            <Image src={"/logo.png"} alt="Serv Logo" width={50} height={50} />
+                            {/* <SitemarkIcon /> */}
                             <Typography
                                 variant="body2"
                                 gutterBottom
                                 sx={{ fontWeight: 600, mt: 2 }}
                             >
-                                Join the newsletter
+                                Media sosial kami
                             </Typography>
                             <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
-                                Subscribe for weekly updates. No spams ever!
+                                Anda bisa bertanya dan mengecek postingan terkini.
                             </Typography>
-                            <InputLabel htmlFor="email-newsletter">Email</InputLabel>
+                            {/* <InputLabel htmlFor="email-newsletter">Email</InputLabel>
                             <Stack direction="row" spacing={1} useFlexGap>
                                 <TextField
                                     id="email-newsletter"
@@ -95,6 +98,49 @@ export default function Footer() {
                                 >
                                     Subscribe
                                 </Button>
+                            </Stack> */}
+                            <Stack
+                                direction="row"
+                                spacing={1}
+                                useFlexGap
+                                sx={{ justifyContent: 'left', color: 'text.secondary' }}
+                            >
+                                {/* <IconButton
+                            color="inherit"
+                            size="small"
+                            href="https://github.com/mui"
+                            aria-label="GitHub"
+                            sx={{ alignSelf: 'center' }}
+                        >
+                            <GitHubIcon />
+                        </IconButton>
+                        <IconButton
+                            color="inherit"
+                            size="small"
+                            href="https://x.com/MaterialUI"
+                            aria-label="X"
+                            sx={{ alignSelf: 'center' }}
+                        >
+                            <TwitterIcon />
+                        </IconButton> */}
+                                <IconButton
+                                    color="inherit"
+                                    size="small"
+                                    href="https://linkedin.com/company/serv-teams/"
+                                    aria-label="LinkedIn"
+                                    sx={{ alignSelf: 'center' }}
+                                >
+                                    <LinkedInIcon />
+                                </IconButton>
+                                <IconButton
+                                    color="inherit"
+                                    size="small"
+                                    href="https://instagram.com/serv.adv"
+                                    aria-label="LinkedIn"
+                                    sx={{ alignSelf: 'center' }}
+                                >
+                                    <Instagram />
+                                </IconButton>
                             </Stack>
                         </Box>
                     </Box>
@@ -160,11 +206,8 @@ export default function Footer() {
                         <Link color="text.secondary" variant="body2" href="/terms">
                             Terms
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="#">
+                        <Link color="text.secondary" variant="body2" href="/privacy">
                             Privacy
-                        </Link>
-                        <Link color="text.secondary" variant="body2" href="#">
-                            Contact
                         </Link>
                     </Box>
                 </Box>
@@ -190,40 +233,6 @@ export default function Footer() {
                         </Link> */}
                         <Copyright />
                     </div>
-                    <Stack
-                        direction="row"
-                        spacing={1}
-                        useFlexGap
-                        sx={{ justifyContent: 'left', color: 'text.secondary' }}
-                    >
-                        <IconButton
-                            color="inherit"
-                            size="small"
-                            href="https://github.com/mui"
-                            aria-label="GitHub"
-                            sx={{ alignSelf: 'center' }}
-                        >
-                            <GitHubIcon />
-                        </IconButton>
-                        <IconButton
-                            color="inherit"
-                            size="small"
-                            href="https://x.com/MaterialUI"
-                            aria-label="X"
-                            sx={{ alignSelf: 'center' }}
-                        >
-                            <TwitterIcon />
-                        </IconButton>
-                        <IconButton
-                            color="inherit"
-                            size="small"
-                            href="https://www.linkedin.com/company/mui/"
-                            aria-label="LinkedIn"
-                            sx={{ alignSelf: 'center' }}
-                        >
-                            <LinkedInIcon />
-                        </IconButton>
-                    </Stack>
                 </Box>
             </Container>
         </React.Fragment>
