@@ -16,6 +16,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Sitemark from './SitemarkIcon';
 import Link from 'next/link';
 import ThemeToggleButton from '../../components/ModeSwitch';
+import Image from 'next/image';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
@@ -56,17 +57,16 @@ export default function AppAppBar() {
                 <StyledToolbar variant="dense" disableGutters>
                     <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
 
-                        <Link href="/"
-                        // style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-                        >
-                            <Sitemark />
-                        </Link>
+                        {/* <Sitemark /> */}
 
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             {/* jika user otentikasi */}
                             {/* <Button variant="text" color="info" size="small">
                                 Topik Anda
                             </Button> */}
+                            <Button variant="text" color='info' href='/' startIcon={<Box component="img" src="/logo.png" sx={{ width: 24, height: 24 }} />}>
+                                Serv
+                            </Button>
                             <Button variant="text" color="info" size="small">
                                 Ekonomi
                             </Button>
