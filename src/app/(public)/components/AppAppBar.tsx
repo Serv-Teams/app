@@ -23,10 +23,10 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexShrink: 0,
-    borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
+    // borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
     backdropFilter: 'blur(24px)',
     border: '1px solid',
-    borderColor: (theme.vars || theme).palette.divider,
+    borderColor: '#ff914d',
     backgroundColor: theme.vars
         ? `rgba(${theme.vars.palette.background.defaultChannel} / 0.4)`
         : alpha(theme.palette.background.default, 0.4),
@@ -58,7 +58,7 @@ export default function AppAppBar() {
                     <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
 
                         {/* <Sitemark /> */}
-                        <Button variant="text" color='info' href='/' startIcon={<Box component="img" src="/logo.png" sx={{ width: 24, height: 24 }} />}>
+                        <Button variant="text" sx={{ color: '#ff914d' }} href='/' startIcon={<Box component="img" src="/logo.png" sx={{ width: 24, height: 24 }} />}>
                             Serv
                         </Button>
 
@@ -67,25 +67,25 @@ export default function AppAppBar() {
                             {/* <Button variant="text" color="info" size="small">
                                 Topik Anda
                             </Button> */}
-                            <Button variant="text" color="info" size="small">
+                            <Button variant="text" size="small" sx={{ color: '#ff914d' }}>
                                 Ekonomi
                             </Button>
-                            <Button variant="text" color="info" size="small">
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Politik
                             </Button>
-                            <Button variant="text" color="info" size="small" href='/teknologi'>
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/teknologi'>
                                 Teknologi
                             </Button>
-                            <Button variant="text" color="info" size="small">
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Olahraga
                             </Button>
-                            <Button variant="text" color="info" size="small">
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Kesehatan
                             </Button>
-                            <Button variant="text" color="info" size="small" href='/pemasaran'>
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/pemasaran'>
                                 Pemasaran
                             </Button>
-                            <Button variant="text" color="info" size="small">
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Travel
                             </Button>
                             {/* <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>

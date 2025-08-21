@@ -261,7 +261,7 @@ export default function Latest({ posts }: { posts: any }) {
                                     tabIndex={0}
                                     className={focusedCardIndex === index ? 'Mui-focused' : ''}
                                 >
-                                    <Link href={`/${d.slug[0]}/${d.slug[1]}`} underline="none">
+                                    <Link href={`/${d.slug[0]}/${d.slug[1]}`} underline="none" color='#ff914d'>
                                         {d.title}
                                         <NavigateNextRoundedIcon
                                             className="arrow"

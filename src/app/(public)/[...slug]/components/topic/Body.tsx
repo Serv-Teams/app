@@ -268,7 +268,7 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
                                             className="arrow"
                                             sx={{ fontSize: '1rem' }}
                                         /> */}
-                                        <Link href={`/teknologi/${d.slug[1]}`} underline="none">
+                                        <Link href={`/teknologi/${d.slug[1]}`} underline="none" color='#ff914d'>
                                             {d.title}
                                             <NavigateNextRoundedIcon
                                                 className="arrow"
@@ -294,16 +294,6 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
                 <Pagination hidePrevButton hideNextButton count={10} boundaryCount={10} />
             </Box>
-            {
-                posts.map((d: any) => (
-                    d.slug[0] === topic.slug[0] && (
-                        <div key={d._id}>
-                            {d.topic}
-                        </div>
-                    )
-                )
-                )
-            }
         </>
     );
 }
