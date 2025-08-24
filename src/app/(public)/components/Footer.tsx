@@ -170,10 +170,10 @@ export default function Footer() {
                             Kesehatan
                         </Link>
                         <Link color="text.secondary" variant="body2" href="/pemasaran">
-                            Pemasaran
+                            Hukum
                         </Link>
                         <Link color="text.secondary" variant="body2" href="/travel">
-                            Travel
+                            Pendidikan
                         </Link>
                     </Box>
                     <Box

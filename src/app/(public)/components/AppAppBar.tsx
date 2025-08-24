@@ -83,7 +83,7 @@ export default function AppAppBar() {
                                 Kesehatan
                             </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/pemasaran'>
-                                Pemasaran
+                                Hukum
                             </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Travel
