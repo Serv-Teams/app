@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <meta name="google-site-verification" content="BSvlxiXcAXyLzL3s2Eg0A52hSrYA6OS9k8phO748jTg" />
       <body>
         <InitColorSchemeScript attribute="class" />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
