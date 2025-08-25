@@ -86,7 +86,7 @@ export default function AppAppBar() {
                                 Hukum
                             </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small">
-                                Travel
+                                Pendidikan
                             </Button>
                             {/* <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                                 Travel
@@ -141,7 +141,7 @@ export default function AppAppBar() {
                                 <MenuItem>Olahraga</MenuItem>
                                 <MenuItem>Kesehatan</MenuItem>
                                 <MenuItem>Gaya Hidup</MenuItem>
-                                <MenuItem>Travel</MenuItem>
+                                <MenuItem>Pendidikan</MenuItem>
                                 <Divider sx={{ my: 3 }} />
                                 {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
