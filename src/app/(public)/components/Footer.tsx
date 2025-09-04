@@ -157,9 +157,6 @@ export default function Footer() {
                         <Link color="text.secondary" variant="body2" href="/ekonomi">
                             Ekonomi
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="/politik">
-                            Politik
-                        </Link>
                         <Link color="text.secondary" variant="body2" href="/teknologi">
                             Teknologi
                         </Link>

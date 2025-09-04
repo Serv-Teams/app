@@ -281,9 +281,9 @@ export default function Latest({ posts }: { posts: any }) {
                         </Grid>
                     ))}
             </Grid>
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
+            {/* <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
                 <Pagination hidePrevButton hideNextButton count={10} boundaryCount={10} />
-            </Box>
+            </Box> */}
         </>
     );
 }

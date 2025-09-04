@@ -70,9 +70,6 @@ export default function AppAppBar() {
                             <Button variant="text" size="small" sx={{ color: '#ff914d' }}>
                                 Ekonomi
                             </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
-                                Politik
-                            </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/teknologi'>
                                 Teknologi
                             </Button>
@@ -136,7 +133,6 @@ export default function AppAppBar() {
                                 {/* jika user otentikasi */}
                                 {/* <MenuItem>Ekonomi</MenuItem> */}
                                 <MenuItem>Ekonomi</MenuItem>
-                                <MenuItem>Politik</MenuItem>
                                 <MenuItem href='/teknologi'>Teknologi</MenuItem>
                                 <MenuItem>Olahraga</MenuItem>
                                 <MenuItem>Kesehatan</MenuItem>
