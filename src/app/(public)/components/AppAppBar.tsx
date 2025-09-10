@@ -67,19 +67,16 @@ export default function AppAppBar() {
                             {/* <Button variant="text" color="info" size="small">
                                 Topik Anda
                             </Button> */}
-                            <Button variant="text" size="small" sx={{ color: '#ff914d' }}>
+                            <Button variant="text" size="small" sx={{ color: '#ff914d' }} href='/ekonomi'>
                                 Ekonomi
                             </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/teknologi'>
                                 Teknologi
                             </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small">
-                                Olahraga
-                            </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Kesehatan
                             </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/pemasaran'>
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Hukum
                             </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small">
@@ -132,11 +129,10 @@ export default function AppAppBar() {
                                 </Box>
                                 {/* jika user otentikasi */}
                                 {/* <MenuItem>Ekonomi</MenuItem> */}
-                                <MenuItem>Ekonomi</MenuItem>
+                                <MenuItem href="/ekonomi">Ekonomi</MenuItem>
                                 <MenuItem href='/teknologi'>Teknologi</MenuItem>
-                                <MenuItem>Olahraga</MenuItem>
                                 <MenuItem>Kesehatan</MenuItem>
-                                <MenuItem>Gaya Hidup</MenuItem>
+                                <MenuItem>Hukum</MenuItem>
                                 <MenuItem>Pendidikan</MenuItem>
                                 <Divider sx={{ my: 3 }} />
                                 {/* <MenuItem>
