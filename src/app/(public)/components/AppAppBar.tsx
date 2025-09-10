@@ -73,7 +73,7 @@ export default function AppAppBar() {
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/teknologi'>
                                 Teknologi
                             </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/kesehatan'>
                                 Kesehatan
                             </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small">
@@ -131,7 +131,7 @@ export default function AppAppBar() {
                                 {/* <MenuItem>Ekonomi</MenuItem> */}
                                 <MenuItem href="/ekonomi">Ekonomi</MenuItem>
                                 <MenuItem href='/teknologi'>Teknologi</MenuItem>
-                                <MenuItem>Kesehatan</MenuItem>
+                                <MenuItem href='/kesehatan'>Kesehatan</MenuItem>
                                 <MenuItem>Hukum</MenuItem>
                                 <MenuItem>Pendidikan</MenuItem>
                                 <Divider sx={{ my: 3 }} />
