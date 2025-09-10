@@ -76,12 +76,12 @@ export default function AppAppBar() {
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/kesehatan'>
                                 Kesehatan
                             </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
+                            {/* <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Hukum
                             </Button>
                             <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Pendidikan
-                            </Button>
+                            </Button> */}
                             {/* <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                                 Travel
                             </Button> */}
@@ -128,12 +128,11 @@ export default function AppAppBar() {
                                     </IconButton>
                                 </Box>
                                 {/* jika user otentikasi */}
-                                {/* <MenuItem>Ekonomi</MenuItem> */}
                                 <MenuItem href="/ekonomi">Ekonomi</MenuItem>
                                 <MenuItem href='/teknologi'>Teknologi</MenuItem>
                                 <MenuItem href='/kesehatan'>Kesehatan</MenuItem>
-                                <MenuItem>Hukum</MenuItem>
-                                <MenuItem>Pendidikan</MenuItem>
+                                {/* <MenuItem>Hukum</MenuItem>
+                                <MenuItem>Pendidikan</MenuItem> */}
                                 <Divider sx={{ my: 3 }} />
                                 {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
