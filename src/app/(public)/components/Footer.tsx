@@ -160,9 +160,6 @@ export default function Footer() {
                         <Link color="text.secondary" variant="body2" href="/teknologi">
                             Teknologi
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="/olahraga">
-                            Olahraga
-                        </Link>
                         <Link color="text.secondary" variant="body2" href="/kesehatan">
                             Kesehatan
                         </Link>
