@@ -35,8 +35,8 @@ export default function Body({ content, source }: { content: any, source: any[] 
             </Typography>
             <ul>
                 {
-                    source.map((s) => (
-                        <li key={s}>
+                    source.map((s, index) => (
+                        <li key={index}>
                             <a href={s} target="_blank" rel="noreferrer noopener">
                                 <Typography>{s}</Typography>
                             </a>
