@@ -166,12 +166,12 @@ export default function Footer() {
                         <Link color="text.secondary" variant="body2" href="/kesehatan">
                             Kesehatan
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="/pemasaran">
+                       {/* <Link color="text.secondary" variant="body2" href="/hukum"> 
                             Hukum
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="/travel">
+                        <Link color="text.secondary" variant="body2" href="/pendidikan">
                             Pendidikan
-                        </Link>
+                        </Link> */}
                     </Box>
                     <Box
                         sx={{
