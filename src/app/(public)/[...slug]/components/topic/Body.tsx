@@ -291,9 +291,9 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
                     )
                 }
             </Grid>
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
+            {/* <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
                 <Pagination hidePrevButton hideNextButton count={10} boundaryCount={10} />
-            </Box>
+            </Box> */}
         </>
     );
 }
