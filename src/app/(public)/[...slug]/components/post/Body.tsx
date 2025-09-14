@@ -25,7 +25,7 @@ const components = {
     Selengkapnya
 }
 
-export default function Body({ content, source }: { content: any, source: any[] }) {
+export default function Body({ content, source }: { content: any, source: any }) {
     return (
         <>
             <MDXRemote components={components} source={content} />
@@ -35,10 +35,10 @@ export default function Body({ content, source }: { content: any, source: any[] 
             </Typography>
             <ul>
                 {
-                    source.map((s, index) => (
+                    source.map((s: any, index: any) => (
                         <li key={index}>
-                            <a href={s} target="_blank" rel="noreferrer noopener">
-                                <Typography>{s}</Typography>
+                            <a href={s.link} target="_blank" rel="noreferrer noopener">
+                                <Typography>{s.title}</Typography>
                             </a>
                         </li>
                     ))}
