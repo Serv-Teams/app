@@ -268,7 +268,7 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
                                             className="arrow"
                                             sx={{ fontSize: '1rem' }}
                                         /> */}
-                                        <Link href={`/teknologi/${d.slug[1]}`} underline="none" color='#ff914d'>
+                                        <Link href={`/blog/${d.slug[0]}/${d.slug[1]}`} underline="none" color='#ff914d'>
                                             {d.title}
                                             <NavigateNextRoundedIcon
                                                 className="arrow"

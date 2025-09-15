@@ -67,14 +67,11 @@ export default function AppAppBar() {
                             {/* <Button variant="text" color="info" size="small">
                                 Topik Anda
                             </Button> */}
-                            <Button variant="text" size="small" sx={{ color: '#ff914d' }} href='/ekonomi'>
-                                Ekonomi
+                            <Button variant="text" size="medium" sx={{ color: '#ff914d' }} href='/iklan'>
+                                Iklan
                             </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/teknologi'>
-                                Teknologi
-                            </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="small" href='/kesehatan'>
-                                Kesehatan
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="medium" href='/blog'>
+                                Blog
                             </Button>
                             {/* <Button variant="text" sx={{ color: '#ff914d' }} size="small">
                                 Hukum
