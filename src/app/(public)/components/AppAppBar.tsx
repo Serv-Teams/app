@@ -125,11 +125,8 @@ export default function AppAppBar() {
                                     </IconButton>
                                 </Box>
                                 {/* jika user otentikasi */}
-                                <MenuItem href="/ekonomi">Ekonomi</MenuItem>
-                                <MenuItem href='/teknologi'>Teknologi</MenuItem>
-                                <MenuItem href='/kesehatan'>Kesehatan</MenuItem>
-                                {/* <MenuItem>Hukum</MenuItem>
-                                <MenuItem>Pendidikan</MenuItem> */}
+                                <MenuItem href="/blog">Blog</MenuItem>
+                                <MenuItem href='/iklan'>Iklan</MenuItem>
                                 <Divider sx={{ my: 3 }} />
                                 {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
