@@ -125,8 +125,8 @@ export default function AppAppBar() {
                                     </IconButton>
                                 </Box>
                                 {/* jika user otentikasi */}
-                                <MenuItem href="/blog">Blog</MenuItem>
-                                <MenuItem href='/iklan'>Iklan</MenuItem>
+                                <MenuItem component="a" href="/blog">Blog</MenuItem>
+                                <MenuItem component="a" href='/iklan'>Iklan</MenuItem>
                                 <Divider sx={{ my: 3 }} />
                                 {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
