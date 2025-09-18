@@ -116,7 +116,13 @@ export default function Latest({ posts }: { posts: any }) {
 
     return (
         <>
+            <div>
+                <Typography variant="h2" gutterBottom>
+                    Blog
+                </Typography>
+                <Typography>Menyajikan artikel terkini</Typography>
 
+            </div>
             <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
                 {/* {articleInfo.map((article, index) => (
                     <Grid key={index} size={{ xs: 12, sm: 6 }}>

@@ -4,7 +4,6 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import BodyTopic from './components/topic/Body';
 import { notFound } from 'next/navigation';
 import { getPost, getCachedPosts } from '@/actions/Post';
-import HeadTopic from './components/topic/Head';
 import HeadPost from './components/post/Head';
 import BodyPost from './components/post/Body';
 
@@ -47,10 +46,7 @@ export default async function Page(
         }
 
         return (
-            <>
-                <HeadPost title={data.title} />
-                <BodyPost content={data.content} source={data.source} />
-            </>
+            <BodyPost content={data.content} source={data.source} title={data.title} />
         )
     } else if (slug.length === 1) {
 
@@ -62,10 +58,7 @@ export default async function Page(
         }
 
         return (
-            <>
-                <HeadTopic title={topic.topic} />
-                <BodyTopic posts={posts} topic={topic} />
-            </>
+            <BodyTopic posts={posts} topic={topic} title={topic.topic} />
         )
     }
 }

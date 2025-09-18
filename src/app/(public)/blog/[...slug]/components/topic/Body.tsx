@@ -178,7 +178,7 @@ function Author(
     );
 }
 
-export default function Body({ posts, topic }: { posts: any[], topic: any }) {
+export default function Body({ posts, topic, title }: { posts: any[], topic: any, title: string }) {
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(
         null,
     );
@@ -200,7 +200,13 @@ export default function Body({ posts, topic }: { posts: any[], topic: any }) {
 
     return (
         <>
+            <div>
+                <Typography variant="h2" gutterBottom>
+                    {title}
+                </Typography>
+                <Typography>Menyajikan artikel seputar {title}</Typography>
 
+            </div>
             <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
                 {/* {articleInfo.map((article, index) => (
                     <Grid key={index} size={{ xs: 12, sm: 6 }}>

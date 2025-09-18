@@ -1,18 +1,19 @@
-import { Box, Button, Typography } from "@mui/material";
+import * as React from 'react';
+import type { Metadata } from 'next'
+import { Box, Button, Typography } from '@mui/material';
 
-export default function Head({ title }: { title: string }) {
+
+export const metadata: Metadata = {
+    title: 'Serv - Blog',
+    description: 'Menyajikan artikel terkini',
+}
+
+
+export default function Layout({
+    children,
+}: { children: React.ReactNode }) {
     return (
-        // <Typography variant="h2" gutterBottom>
-        //     {title}
-        // </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-            <div>
-                <Typography variant="h2" gutterBottom>
-                    {title}
-                </Typography>
-                <Typography>Menyajikan artikel seputar {title}</Typography>
-
-            </div>
             <Box
                 sx={{
                     display: 'flex',
@@ -35,9 +36,10 @@ export default function Head({ title }: { title: string }) {
                     <Button size="small" variant="outlined" sx={{ color: '#ff914d', border: '1px #ff914d solid' }} href="/blog">Semua</Button>
                     <Button size="small" variant="outlined" sx={{ color: '#ff914d', border: '1px #ff914d solid' }} href="/blog/ekonomi">Ekonomi</Button>
                     <Button size="small" variant="outlined" sx={{ color: '#ff914d', border: '1px #ff914d solid' }} href="/blog/teknologi">Teknologi</Button>
-                    <Button size="small" variant="outlined" sx={{ color: '#ff914d', border: '1px #ff914d solid' }} href="/blog/kesehatan">Kesehatan</Button>
+                    <Button size="small" variant="outlined" sx={{ color: '#ff914d', border: '1px #ff914d solid' }} href="/kesehatan">Kesehatan</Button>
                 </Box>
             </Box>
+            {children}
         </Box>
     );
 }

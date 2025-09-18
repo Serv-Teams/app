@@ -25,13 +25,15 @@ const components = {
     Selengkapnya
 }
 
-export default function Body({ content, source }: { content: any, source: any }) {
+export default function Body({ content, source, title }: { content: any, source: any, title: string }) {
     return (
         <>
+            <Typography variant="h4" gutterBottom>
+                {title}
+            </Typography>
             <MDXRemote components={components} source={content} />
             <Typography>
                 Sumber:
-
             </Typography>
             <ul>
                 {
