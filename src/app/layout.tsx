@@ -8,8 +8,8 @@ import theme from '@/theme';
 import AdSense from './components/AdSense';
 
 export const metadata: Metadata = {
-  title: 'Serv - Blog',
-  description: 'Menyajikan artikel-artikel menarik seputar informasi terkini',
+  title: 'Serv',
+  description: 'Kami bergerak dan berfokus di jasa pemasaran',
 }
 
 export default function RootLayout(props: { children: React.ReactNode }) {
