@@ -22,8 +22,8 @@ export async function generateMetadata(
     const topic = JSON.parse(JSON.stringify(await getPost(slug[0])))
 
     return {
-        title: slug[1] ? `Serv - ${data.title}` : slug[0] ? `Serv - ${topic.topic}` : 'Serv - Tidak ditemukan',
-        description: slug[1] ? `Serv - ${data.content}` : slug[0] ? `Serv - ${topic.topic}` : 'Serv - Tidak ditemukan',
+        title: slug[1] ? `Serv - Blog ${topic.topic}: ${data.title}` : slug[0] ? `Serv - Blog ${topic.topic}` : 'Serv - Tidak ditemukan',
+        description: slug[1] ? `Serv - Blog ${topic.topic}: ${data.content}` : slug[0] ? `Serv - Blog ${topic.topic}` : 'Serv - Tidak ditemukan',
     }
 }
 
