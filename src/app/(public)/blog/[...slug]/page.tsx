@@ -4,7 +4,6 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import BodyTopic from './components/topic/Body';
 import { notFound } from 'next/navigation';
 import { getPost, getCachedPosts } from '@/actions/Post';
-import HeadPost from './components/post/Head';
 import BodyPost from './components/post/Body';
 
 
