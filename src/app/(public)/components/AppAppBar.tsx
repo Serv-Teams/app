@@ -13,10 +13,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import Sitemark from './SitemarkIcon';
-import Link from 'next/link';
 import ThemeToggleButton from '../../components/ModeSwitch';
-import Image from 'next/image';
+import { signIn } from "next-auth/react"
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
@@ -82,6 +80,9 @@ export default function AppAppBar() {
                             {/* <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                                 Travel
                             </Button> */}
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="medium" onClick={() => signIn("google", { redirectTo: "/dasbor/iklan" })}>
+                                Masuk
+                            </Button>
                         </Box>
                     </Box>
                     <Box
