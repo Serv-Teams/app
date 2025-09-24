@@ -92,7 +92,7 @@ const SyledCard = styled(Card)(({ theme }) => ({
     backgroundColor: (theme.vars || theme).palette.background.paper,
     '&:hover': {
         backgroundColor: 'transparent',
-        cursor: 'pointer',
+        // cursor: 'pointer',
     },
     '&:focus-visible': {
         outline: '3px solid',
@@ -210,7 +210,7 @@ export default function MainContent() {
                         className={focusedCardIndex === 2 ? 'Mui-focused' : ''}
                         sx={{ height: '100%' }}
                     >
-                        <CardMedia
+                        {/* <CardMedia
                             component="img"
                             alt="green iguana"
                             image={cardData[2].img}
@@ -218,83 +218,17 @@ export default function MainContent() {
                                 height: { sm: 'auto', md: '50%' },
                                 aspectRatio: { sm: '16 / 9', md: '' },
                             }}
-                        />
+                        /> */}
+
+                        <iframe loading="lazy" height={280} width="100%" style={{ border: 'none' }}
+                            src="https://www.canva.com/design/DAGz321IEvE/ThugjSI0hFO7_eMy4kfxQA/view?embed" allow="fullscreen">
+                        </iframe>
                         <SyledCardContent>
-                            <Typography gutterBottom variant="caption" component="div">
-                                {cardData[2].tag}
-                            </Typography>
-                            <Typography gutterBottom variant="h6" component="div">
-                                {cardData[2].title}
-                            </Typography>
                             <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-                                {cardData[2].description}
+                                Kami menyajikan berbagai layanan yang bisa membantu Anda dalam berbagai kebutuhan, mulai dari pengembangan perangkat lunak hingga konsultasi bisnis. Dengan tim ahli yang berpengalaman, kami siap memberikan solusi terbaik untuk mendukung kesuksesan Anda.
                             </StyledTypography>
                         </SyledCardContent>
                         <Author authors={cardData[2].authors} />
-                    </SyledCard>
-                </Grid>
-                <Grid size={{ xs: 12, md: 4 }}>
-                    <SyledCard
-                        variant="outlined"
-                        onFocus={() => handleFocus(2)}
-                        onBlur={handleBlur}
-                        tabIndex={0}
-                        className={focusedCardIndex === 2 ? 'Mui-focused' : ''}
-                        sx={{ height: '100%' }}
-                    >
-                        <CardMedia
-                            component="img"
-                            alt="green iguana"
-                            image={cardData[2].img}
-                            sx={{
-                                height: { sm: 'auto', md: '50%' },
-                                aspectRatio: { sm: '16 / 9', md: '' },
-                            }}
-                        />
-                        <SyledCardContent>
-                            <Typography gutterBottom variant="caption" component="div">
-                                {cardData[2].tag}
-                            </Typography>
-                            <Typography gutterBottom variant="h6" component="div">
-                                {cardData[2].title}
-                            </Typography>
-                            <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-                                {cardData[2].description}
-                            </StyledTypography>
-                        </SyledCardContent>
-                        <Author authors={cardData[2].authors} />
-                    </SyledCard>
-                </Grid>
-                <Grid size={{ xs: 12, md: 4 }}>
-                    <SyledCard
-                        variant="outlined"
-                        onFocus={() => handleFocus(5)}
-                        onBlur={handleBlur}
-                        tabIndex={0}
-                        className={focusedCardIndex === 5 ? 'Mui-focused' : ''}
-                        sx={{ height: '100%' }}
-                    >
-                        <CardMedia
-                            component="img"
-                            alt="green iguana"
-                            image={cardData[5].img}
-                            sx={{
-                                height: { sm: 'auto', md: '50%' },
-                                aspectRatio: { sm: '16 / 9', md: '' },
-                            }}
-                        />
-                        <SyledCardContent>
-                            <Typography gutterBottom variant="caption" component="div">
-                                {cardData[5].tag}
-                            </Typography>
-                            <Typography gutterBottom variant="h6" component="div">
-                                {cardData[5].title}
-                            </Typography>
-                            <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-                                {cardData[5].description}
-                            </StyledTypography>
-                        </SyledCardContent>
-                        <Author authors={cardData[5].authors} />
                     </SyledCard>
                 </Grid>
             </Grid>
