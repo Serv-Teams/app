@@ -1,10 +1,10 @@
 
 import * as React from 'react';
 import type { Metadata, ResolvingMetadata } from 'next'
-import BodyTopic from './components/Topic';
+import Topic from './components/Topic';
 import { notFound } from 'next/navigation';
 import { getPost, getCachedPosts } from '@/actions/Post';
-import BodyPost from './components/Post';
+import Post from './components/Post';
 
 
 type Props = {
@@ -45,7 +45,7 @@ export default async function Page(
         }
 
         return (
-            <BodyPost content={data.content} source={data.source} title={data.title} />
+            <Post content={data.content} source={data.source} title={data.title} />
         )
     } else if (slug.length === 1) {
 
@@ -57,7 +57,7 @@ export default async function Page(
         }
 
         return (
-            <BodyTopic posts={posts} topic={topic} title={topic.topic} />
+            <Topic posts={posts} topic={topic} title={topic.topic} />
         )
     }
 }

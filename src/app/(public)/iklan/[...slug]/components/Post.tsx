@@ -25,7 +25,7 @@ const components = {
     Selengkapnya
 }
 
-export default function Body({ content, source, title }: { content: any, source: any, title: string }) {
+export default function Post({ content, source, title }: { content: any, source: any, title: string }) {
     return (
         <>
             <Typography variant="h4" gutterBottom>

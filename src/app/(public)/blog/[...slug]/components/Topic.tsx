@@ -178,7 +178,7 @@ function Author(
     );
 }
 
-export default function Body({ posts, topic, title }: { posts: any[], topic: any, title: string }) {
+export default function Topic({ posts, topic, title }: { posts: any[], topic: any, title: string }) {
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(
         null,
     );
