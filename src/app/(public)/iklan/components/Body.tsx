@@ -151,6 +151,12 @@ export default function Body({ adverts, profiles }: { adverts: any, profiles: an
     };
 
 
+    let fmt = new Intl.DateTimeFormat('id-ID', {
+        dateStyle: "long",
+        timeStyle: "short",
+        timeZone: "UTC",
+        hour12: false
+    });
 
     return (
         <>
@@ -231,7 +237,7 @@ export default function Body({ adverts, profiles }: { adverts: any, profiles: an
                                             {profiles.map((p: any) => p._id === a.corpProfileId && p.name)}
                                         </Typography>
                                     </Box>
-                                    <Typography variant="caption">{a.createdAt}</Typography>
+                                    <Typography variant="caption">{fmt.format(new Date(a.createdAt))}</Typography>
                                 </Box>
                             </SyledCard>
                         </Grid>
