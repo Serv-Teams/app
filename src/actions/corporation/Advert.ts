@@ -42,11 +42,11 @@ export const getCachedAdverts = unstable_cache(
 )
 
 export const getAdvert = async (slug: string) => {
-    const db = client.db("blog");
-    const post = await db
-        .collection("posts")
+    const db = client.db("corporate");
+    const advert = await db
+        .collection("adverts")
         .findOne({ slug: slug })
-    return post;
+    return advert;
 }
 
 export async function upsertPost(prevState: any, formData: FormData) {

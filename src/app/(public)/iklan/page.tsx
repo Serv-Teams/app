@@ -2,7 +2,7 @@
 // //     return (
 // //         <div>
 // //             Halaman iklan
-// //            
+// //
 // //         </div>
 // //     )
 // // }
@@ -239,26 +239,26 @@
 // }
 
 import * as React from 'react';
-import { getCachedAdverts } from '@/actions/Advert';
+import { getCachedAdverts } from '@/actions/corporation/Advert';
 import { notFound } from 'next/navigation';
+import Body from './components/Body';
+import { getCachedProfiles } from '@/actions/corporation/Profile';
 
 export default async function Page() {
+
+
+
+
+    const profiles = JSON.parse(JSON.stringify(await getCachedProfiles()))
     const adverts = JSON.parse(JSON.stringify(await getCachedAdverts()))
 
 
-    if (!adverts) {
+    if (!adverts || !profiles) {
         notFound()
     }
 
+
     return (
-        // <Latest posts={posts} />
-        <>
-            {
-                adverts.map((d: any, index: any) => (
-                    <div key={index}>
-                        {d.description}
-                    </div>
-                ))}
-        </>
+        <Body adverts={adverts} profiles={profiles} />
     );
 }
