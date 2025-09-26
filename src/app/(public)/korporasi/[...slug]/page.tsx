@@ -96,41 +96,39 @@ export default async function Page(
             const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
             const adverts = JSON.parse(JSON.stringify(await getCachedAdverts()))
             return (
-                <>
-                    <Grid container spacing={2} columns={12}>
+                <Grid container spacing={2} columns={12}>
 
-                        {
-                            adverts.map((a: any, index: any) => (
-                                profile._id === a.corpProfileId &&
-                                // <div key={index}>
-                                //     {d.description}
-                                // </div>
-                                <Grid size={{ xs: 12, md: 4 }} key={index}>
+                    {
+                        adverts.map((a: any, index: any) => (
+                            profile._id === a.corpProfileId &&
+                            // <div key={index}>
+                            //     {d.description}
+                            // </div>
+                            <Grid size={{ xs: 12, md: 4 }} key={index}>
 
 
-                                    <iframe loading="lazy" height={280} width="100%" style={{ border: 'none' }}
-                                        src={a.img} allow="fullscreen">
-                                    </iframe>
-                                    <Typography variant="body2" color="text.secondary" gutterBottom>
-                                        {a.description}
-                                        {/* features: limit characters to 100 */}
-                                    </Typography>
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            gap: 2,
-                                            alignItems: 'center',
-                                            justifyContent: 'space-between',
-                                            padding: '16px',
-                                        }}
-                                    >
-                                    </Box>
-                                </Grid>
-                            ))
-                        }
-                    </Grid >
-                </>
+                                <iframe loading="lazy" height={280} width="100%" style={{ border: 'none' }}
+                                    src={a.img} allow="fullscreen">
+                                </iframe>
+                                <Typography variant="body2" color="text.secondary" gutterBottom>
+                                    {a.description}
+                                    {/* features: limit characters to 100 */}
+                                </Typography>
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        gap: 2,
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                        padding: '16px',
+                                    }}
+                                >
+                                </Box>
+                            </Grid>
+                        ))
+                    }
+                </Grid>
             )
         } else if (slug[1] === 'profil') {
             const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
