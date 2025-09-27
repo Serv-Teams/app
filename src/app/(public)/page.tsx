@@ -555,8 +555,6 @@ export default function Page() {
 
 
   return (
-    <>
-      {/* <Hero /> */}
       <div>
         <Features />
         <Divider />
@@ -569,6 +567,5 @@ export default function Page() {
         <FAQ />
         <Divider />
       </div>
-    </>
   );
 }

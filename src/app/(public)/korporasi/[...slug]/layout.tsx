@@ -1,6 +1,6 @@
 import { getAdvert } from "@/actions/corporation/Advert";
 import { getProfile } from "@/actions/corporation/Profile";
-import { Box, Link } from "@mui/material";
+import { Box, Divider, Link } from "@mui/material";
 
 export default async function Layout({
     children,
@@ -34,10 +34,12 @@ export default async function Layout({
             {
                 profile.industry
             }
+            <Divider/>
             <br />
             <Link href={`/korporasi/${profile.slug}`}>Beranda</Link>
             <Link href={`/korporasi/${profile.slug}/profil`}>Profil</Link>
             <Link href={`/korporasi/${profile.slug}/iklan`}>Iklan</Link>
+            <Divider/>
             {children}
         </Box>
     );
