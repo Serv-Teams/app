@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import AppAppBar from './components/AppAppBar';
 import Footer from './components/Footer';
+import Hero from './components/Hero';
 
 export default function Layout({
     children,
@@ -13,6 +14,7 @@ export default function Layout({
         <>
             <CssBaseline enableColorScheme />
             <AppAppBar />
+            <Hero />
             <Container
                 maxWidth="lg"
                 component="main"

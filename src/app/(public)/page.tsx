@@ -556,8 +556,7 @@ export default function Page() {
 
   return (
     <>
-      <CssBaseline enableColorScheme />
-      <Hero />
+      {/* <Hero /> */}
       <div>
         <Features />
         <Divider />
