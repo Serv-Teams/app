@@ -246,7 +246,7 @@ export default function Hero() {
                                 fontSize: 'inherit',
                                 color: 'primary.main',
                                 ...theme.applyStyles('dark', {
-                                    color: 'primary.light',
+                                    color: '#ff914d',
                                 }),
                             })}
                         >
