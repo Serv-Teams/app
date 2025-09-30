@@ -65,9 +65,9 @@ export default function AppAppBar() {
                             {/* <Button variant="text" color="info" size="small">
                                 Topik Anda
                             </Button> */}
-                            <Button variant="text" size="medium" sx={{ color: '#ff914d' }} href='/iklan'>
+                            {/* <Button variant="text" size="medium" sx={{ color: '#ff914d' }} href='/iklan'>
                                 Iklan
-                            </Button>
+                            </Button> */}
                             <Button variant="text" sx={{ color: '#ff914d' }} size="medium" href='/blog'>
                                 Blog
                             </Button>
@@ -80,9 +80,9 @@ export default function AppAppBar() {
                             {/* <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                                 Travel
                             </Button> */}
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="medium" onClick={() => signIn("google", { redirectTo: "/dasbor/iklan" })}>
+                            {/* <Button variant="text" sx={{ color: '#ff914d' }} size="medium" onClick={() => signIn("google", { redirectTo: "/dasbor/iklan" })}>
                                 Masuk
-                            </Button>
+                            </Button> */}
                         </Box>
                     </Box>
                     <Box
@@ -127,7 +127,7 @@ export default function AppAppBar() {
                                 </Box>
                                 {/* jika user otentikasi */}
                                 <MenuItem component="a" href="/blog">Blog</MenuItem>
-                                <MenuItem component="a" href='/iklan'>Iklan</MenuItem>
+                                {/* <MenuItem component="a" href='/iklan'>Iklan</MenuItem> */}
                                 <Divider sx={{ my: 3 }} />
                                 {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
