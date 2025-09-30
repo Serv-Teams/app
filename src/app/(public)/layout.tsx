@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 
 
- 
+
 import { usePathname } from 'next/navigation'
 
 export default function Layout({
@@ -16,21 +16,27 @@ export default function Layout({
 }: {
     children: React.ReactNode
 }) {
- const pathname = usePathname()
-    
+    const pathname = usePathname()
+
     return (
         <>
             <CssBaseline enableColorScheme />
             <AppAppBar />
-            {pathname === "/" &&  <Hero />}
-           
-            <Container
-                maxWidth="lg"
-                component="main"
-                sx={{ display: 'flex', flexDirection: 'column', my: 20 }}
-            >
-                {children}
-            </Container>
+            {
+                pathname === "/" ?
+                    <>
+                        <Hero />
+                        {children}
+                    </> : <Container
+                        maxWidth="lg"
+                        component="main"
+                        sx={{ display: 'flex', flexDirection: 'column', my: 20 }}
+                    >
+                        {children}
+                    </Container>
+            }
+
+
             <Footer />
         </>
     );
