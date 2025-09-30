@@ -209,7 +209,7 @@ export default function Hero() {
                     'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)',
                 ...theme.applyStyles('dark', {
                     backgroundImage:
-                        'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)',
+                        'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(41.54, 100%, 16%), transparent)',
                 }),
             })}
         >
@@ -244,7 +244,7 @@ export default function Hero() {
                             // variant="h1"
                             sx={(theme) => ({
                                 fontSize: 'inherit',
-                                color: 'primary.main',
+                                color: '#ff914d',
                                 ...theme.applyStyles('dark', {
                                     color: '#ff914d',
                                 }),
