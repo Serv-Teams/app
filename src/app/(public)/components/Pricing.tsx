@@ -442,7 +442,7 @@ export default function Pricing() {
                                             : { color: null },
                                     ]}
                                 >
-                                    <Typography component="h3" variant="h2">
+                                    <Typography component="h4" variant="h3">
                                         Rp.{tier.price}
                                     </Typography>
                                     <Typography component="h3" variant="h6">
