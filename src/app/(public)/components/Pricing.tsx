@@ -292,44 +292,49 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 const tiers = [
     {
-        title: 'Dasar',
-        price: '0',
+        title: 'Pemula',
+        price: '195rb',
         description: [
-            '10 users included',
-            '2 GB of storage',
-            'Help center access',
-            'Email support',
+            '1 Halaman website Company Profile = Rp. 45rb',
+            'SEO = Rp. 50rb',
+            'Google Ads = Rp. 40rb',
+            'WhatsApp Chatbot = Rp. 30rb',
+            'Email Ads = Rp. 30rb',
         ],
-        buttonText: 'Sign up for free',
+        buttonText: 'Pesan',
         buttonVariant: 'outlined',
         buttonColor: 'primary',
     },
     {
-        title: 'Professional',
-        subheader: 'Recommended',
-        price: '15',
+        title: 'Profesional',
+        subheader: 'Rekomendasi',
+        price: '275rb',
         description: [
-            '20 users included',
-            '10 GB of storage',
-            'Help center access',
-            'Priority email support',
-            'Dedicated team',
-            'Best deals',
+            '1 halaman website Company Profile = Rp. 45rb',
+            'SEO = Rp. 50rb',
+            'Google Ads = Rp. 40rb',
+            'Meta Ads = Rp. 35rb',
+            'TikTok Ads = Rp. 45rb',
+            'WhatsApp Chatbot = Rp. 30rb',
+            'Email Ads = Rp. 30rb',
         ],
-        buttonText: 'Start now',
+        buttonText: 'Pesan',
         buttonVariant: 'contained',
         buttonColor: 'secondary',
     },
     {
-        title: 'Enterprise',
-        price: '30',
+        title: '*Kustom',
+        price: '-',
         description: [
-            '50 users included',
-            '30 GB of storage',
-            'Help center access',
-            'Phone & email support',
+            'Halaman website Company Profile',
+            'SEO',
+            'Google Ads',
+            'Meta Ads',
+            'TikTok Ads',
+            'WhatsApp Chatbot',
+            'Email Ads',
         ],
-        buttonText: 'Contact us',
+        buttonText: 'Pesan',
         buttonVariant: 'outlined',
         buttonColor: 'primary',
     },
@@ -361,13 +366,15 @@ export default function Pricing() {
                     gutterBottom
                     sx={{ color: 'text.primary' }}
                 >
-                    Pricing
+                    Harga
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    Quickly build an effective pricing table for your potential customers with
+                    {/* Quickly build an effective pricing table for your potential customers with
                     this layout. <br />
                     It&apos;s built with default Material UI components with little
-                    customization.
+                    customization. */}
+                    Disesuaikan dengan kebutuhan Anda dengan rentang harga yang kita berikan. <br />
+                    Dibuat dengan konsep desain yang responsif dan tools yang mumpuni.
                 </Typography>
             </Box>
             <Grid
@@ -420,7 +427,7 @@ export default function Pricing() {
                                     <Typography component="h3" variant="h6">
                                         {tier.title}
                                     </Typography>
-                                    {tier.title === 'Professional' && (
+                                    {tier.title === 'Profesional' && (
                                         <Chip icon={<AutoAwesomeIcon />} label={tier.subheader} />
                                     )}
                                 </Box>
@@ -436,10 +443,10 @@ export default function Pricing() {
                                     ]}
                                 >
                                     <Typography component="h3" variant="h2">
-                                        ${tier.price}
+                                        Rp.{tier.price}
                                     </Typography>
                                     <Typography component="h3" variant="h6">
-                                        &nbsp; per month
+                                        /bulan
                                     </Typography>
                                 </Box>
                                 <Divider sx={{ my: 2, opacity: 0.8, borderColor: 'divider' }} />
@@ -471,12 +478,27 @@ export default function Pricing() {
                                         </Typography>
                                     </Box>
                                 ))}
+                                {tier.title === '*Kustom' && (
+                                    <Box
+                                        sx={{ py: 1, display: 'flex', gap: 1.5, alignItems: 'center' }}
+                                    >
+                                        <Typography
+                                            variant="subtitle2"
+                                            component={'span'}
+
+                                        >
+                                            *Kustom: Harga disesuaikan dengan layanan yang dipilih
+                                        </Typography>
+                                    </Box>
+                                )}
                             </CardContent>
                             <CardActions>
                                 <Button
                                     fullWidth
                                     variant={tier.buttonVariant as 'outlined' | 'contained'}
                                     color={tier.buttonColor as 'primary' | 'secondary'}
+                                    href='https://ig.me/m/serv.adv'
+                                    target='_blank'
                                 >
                                     {tier.buttonText}
                                 </Button>

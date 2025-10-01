@@ -88,8 +88,8 @@ export default function FAQ() {
                             sx={{ maxWidth: { sm: '100%', md: '70%' } }}
                         >
                             Pemasaran berbentuk digital adalah promosi bisnis
-                            melalui saluran digital seperti landing page,
-                            optimasi mesin pencari &#40;SEO&#41;, email,
+                            melalui saluran digital seperti company profile,
+                            Search Engine Optimization (SEO), email,
                             atau iklan berbayar daring.
                         </Typography>
                     </AccordionDetails>
@@ -133,7 +133,7 @@ export default function FAQ() {
                         id="panel4d-header"
                     >
                         <Typography component="h3" variant="subtitle2">
-                            Berapa lama waktu yang seharusnya saya habiskan untuk pemasaran lewat Google Ads/Facebook Ads?
+                            Berapa lama waktu yang dihabiskan untuk pemasaran lewat Google Ads/Meta Ads?
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -142,11 +142,11 @@ export default function FAQ() {
                             gutterBottom
                             sx={{ maxWidth: { sm: '100%', md: '70%' } }}
                         >
-                            Hal ini sangat bergantung di mana Anda memasarkan bisnis Anda.
-                            Namun, satu hal yang dapat kami katakan adalah sering kali meremehkan waktu
-                            yang pas untuk memasarkan lewat Google Ads/Facebook Ads.
-                            Tim kami meluangkan waktu beberapa jam per minggu untuk membuat grafis,
-                            menulis konten, berinteraksi dengan pelaku bisnis lain, dan mengikuti tren terkini.
+                            Waktu yang dihabiskan untuk pemasaran lewat Google Ads dan Meta Ads bervariasi,
+                            namun umumnya kampanye kesadaran membutuhkan minimal satu minggu atau lebih
+                            untuk mendapatkan data yang signifikan, sementara optimalisasi penuh pada Google Ads
+                            bisa memakan waktu hingga tiga bulan. Untuk Meta Ads,
+                            kampanye pertimbangan disarankan berjalan selama 5-6 minggu untuk melihat hasil yang ideal.
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -169,44 +169,32 @@ export default function FAQ() {
                             gutterBottom
                             sx={{ maxWidth: { sm: '100%', md: '70%' } }}
                         >
-                            1. Landing Page: https://www.biznetgio.com/news/apa-itu-landing-page<br />
-                            2. SEO: https://developers.google.com/search/docs/fundamentals/do-i-need-seo?hl=id<br />
-                            3. Google Ads: https://support.google.com/google-ads/answer/6319?hl=id<br />
-                            4. Facebook Ads: https://revou.co/panduan-teknis/pengenalan-dasar-facebook-ads<br />
-                            5. Whatsapp Chatbot: https://yellow.ai/id/blog/whatsapp-chatbot/<br />
-                            6. Domain Website: https://www.hostinger.co.id/tutorial/apa-itu-domain/<br />
-                            7. VPS: https://www.biznetgio.com/news/apa-itu-vps
-                        </Typography>
-                    </AccordionDetails>
-                </Accordion>
-                <Accordion
-                    expanded={expanded === 'panel6'}
-                    onChange={handleChange('panel6')}
-                >
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel4d-content"
-                        id="panel4d-header"
-                    >
-                        <Typography component="h3" variant="subtitle2">
-                            Berapa rincian harga per layanan yang diberikan?
-                        </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography
-                            variant="body2"
-                            gutterBottom
-                            sx={{ maxWidth: { sm: '100%', md: '70%' } }}
-                        >
-                            Paket Utama:<br />
-                            1.) 1 Landing Page: Rp. 100.000,-<br />
-                            2.) SEO: Rp. 70.000,-<br />
-                            3.) Google Ads: Rp. 65.000,-<br />
-                            4.) Meta Ads: Rp. 50.000,-<br />
-                            5.) Whatsapp Chatbot: Rp. 40.000,-<br /><br />
-
-                            Paket Opsional:<br />
-                            1.) Hosting (Domain & VPS): Rp. 70.000,-<br />
+                            1. Company Profile: <br />
+                            halaman web yang didesain secara khusus untuk memperkenalkan perusahaan secara menyeluruh kepada publik.<br />
+                            2. SEO (Search Engine Optimization): <br />
+                            adalah praktik atau sekumpulan teknik yang bertujuan untuk meningkatkan visibilitas dan peringkat sebuah website<br />
+                            di hasil pencarian (SERP) mesin telusur seperti Google,<br />
+                            dengan cara membuat konten yang relevan dan berkualitas tinggi <br />
+                            agar mudah ditemukan oleh mesin pencari dan pengguna. <br />
+                            3. Google Ads: <br />
+                            adalah platform periklanan daring yang dimiliki oleh Google,<br />
+                            yang memungkinkan pengiklan untuk membuat iklan yang ditampilkan di hasil pencarian Google,<br />
+                            di situs web mitra Google, dan di platform lainnya.<br />
+                            4. Meta Ads: <br />
+                            adalah platform periklanan daring yang dimiliki oleh Meta Platforms Inc.<br />
+                            (sebelumnya dikenal sebagai Facebook Inc.),<br />
+                            yang memungkinkan pengiklan untuk membuat iklan yang ditampilkan di berbagai platform Meta,<br />
+                            termasuk Facebook, Instagram, Messenger, dan Audience Network.<br />
+                            5. TikTok Ads: <br />
+                            adalah platform periklanan daring yang dimiliki oleh TikTok,<br />
+                            yang memungkinkan pengiklan untuk membuat iklan yang ditampilkan di aplikasi TikTok.<br />
+                            6. Email Ads: <br />
+                            adalah bentuk pemasaran digital yang melibatkan pengiriman pesan komersial atau promosi<br />
+                            melalui email kepada sekelompok orang atau pelanggan potensial.<br />
+                            7. WhatsApp Chatbot: <br />
+                            adalah program komputer yang dirancang untuk berinteraksi dengan pengguna melalui aplikasi WhatsApp,<br />
+                            dengan tujuan memberikan layanan otomatis seperti menjawab pertanyaan,<br />
+                            memberikan informasi produk, atau membantu dalam proses pemesanan.<br />
                         </Typography>
                     </AccordionDetails>
                 </Accordion>

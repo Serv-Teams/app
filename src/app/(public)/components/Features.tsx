@@ -22,7 +22,7 @@ const items = [
     },
     {
         icon: <EdgesensorHighRoundedIcon />,
-        title: 'Pembuatan Landing Page',
+        title: 'Pembuatan Halaman Website Company Profile',
         description:
             'Memperkenalkan bisnis Anda dan mengarahkan calon pelanggan Anda ke platform bisnis Anda.',
         imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-light.png")`,
