@@ -173,27 +173,27 @@ export default function FAQ() {
                             halaman web yang didesain secara khusus untuk memperkenalkan perusahaan secara menyeluruh kepada publik.<br />
                             2. SEO (Search Engine Optimization): <br />
                             adalah praktik atau sekumpulan teknik yang bertujuan untuk meningkatkan visibilitas dan peringkat sebuah website<br />
-                            di hasil pencarian (SERP) mesin telusur seperti Google,<br />
-                            dengan cara membuat konten yang relevan dan berkualitas tinggi <br />
-                            agar mudah ditemukan oleh mesin pencari dan pengguna. <br />
+                            di hasil pencarian (SERP) mesin telusur seperti Google,
+                            dengan cara membuat konten yang relevan dan berkualitas tinggi
+                            agar mudah ditemukan oleh mesin pencari dan pengguna.<br />
                             3. Google Ads: <br />
-                            adalah platform periklanan daring yang dimiliki oleh Google,<br />
-                            yang memungkinkan pengiklan untuk membuat iklan yang ditampilkan di hasil pencarian Google,<br />
+                            adalah platform periklanan daring yang dimiliki oleh Google,
+                            yang memungkinkan pengiklan untuk membuat iklan yang ditampilkan di hasil pencarian Google,
                             di situs web mitra Google, dan di platform lainnya.<br />
                             4. Meta Ads: <br />
-                            adalah platform periklanan daring yang dimiliki oleh Meta Platforms Inc.<br />
-                            (sebelumnya dikenal sebagai Facebook Inc.),<br />
-                            yang memungkinkan pengiklan untuk membuat iklan yang ditampilkan di berbagai platform Meta,<br />
+                            adalah platform periklanan daring yang dimiliki oleh Meta Platforms Inc.
+                            (sebelumnya dikenal sebagai Facebook Inc.),
+                            yang memungkinkan pengiklan untuk membuat iklan yang ditampilkan di berbagai platform Meta,
                             termasuk Facebook, Instagram, Messenger, dan Audience Network.<br />
                             5. TikTok Ads: <br />
-                            adalah platform periklanan daring yang dimiliki oleh TikTok,<br />
+                            adalah platform periklanan daring yang dimiliki oleh TikTok,
                             yang memungkinkan pengiklan untuk membuat iklan yang ditampilkan di aplikasi TikTok.<br />
                             6. Email Ads: <br />
-                            adalah bentuk pemasaran digital yang melibatkan pengiriman pesan komersial atau promosi<br />
+                            adalah bentuk pemasaran digital yang melibatkan pengiriman pesan komersial atau promosi
                             melalui email kepada sekelompok orang atau pelanggan potensial.<br />
                             7. WhatsApp Chatbot: <br />
-                            adalah program komputer yang dirancang untuk berinteraksi dengan pengguna melalui aplikasi WhatsApp,<br />
-                            dengan tujuan memberikan layanan otomatis seperti menjawab pertanyaan,<br />
+                            adalah program komputer yang dirancang untuk berinteraksi dengan pengguna melalui aplikasi WhatsApp,
+                            dengan tujuan memberikan layanan otomatis seperti menjawab pertanyaan,
                             memberikan informasi produk, atau membantu dalam proses pemesanan.<br />
                         </Typography>
                     </AccordionDetails>
