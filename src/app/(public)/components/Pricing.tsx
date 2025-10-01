@@ -497,7 +497,7 @@ export default function Pricing() {
                                     fullWidth
                                     variant={tier.buttonVariant as 'outlined' | 'contained'}
                                     color={tier.buttonColor as 'primary' | 'secondary'}
-                                    href='https://ig.me/m/serv.adv'
+                                    href='https://ig.me/m/serv_agency.id'
                                     target='_blank'
                                 >
                                     {tier.buttonText}
