@@ -27,7 +27,8 @@ export default function Layout({
                     <>
                         <Hero />
                         {children}
-                    </> : <Container
+                    </> :
+                    <Container
                         maxWidth="lg"
                         component="main"
                         sx={{ display: 'flex', flexDirection: 'column', my: 20 }}

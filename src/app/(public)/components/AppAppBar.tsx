@@ -101,6 +101,7 @@ export default function AppAppBar() {
                         <ThemeToggleButton />
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
+                        <ThemeToggleButton />
                         <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
                             <MenuIcon />
                         </IconButton>
@@ -128,7 +129,7 @@ export default function AppAppBar() {
                                 {/* jika user otentikasi */}
                                 <MenuItem component="a" href="/blog">Blog</MenuItem>
                                 {/* <MenuItem component="a" href='/iklan'>Iklan</MenuItem> */}
-                                <Divider sx={{ my: 3 }} />
+                                {/* <Divider sx={{ my: 3 }} /> */}
                                 {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
                                         Sign up
@@ -139,9 +140,9 @@ export default function AppAppBar() {
                                         Sign in
                                     </Button>
                                 </MenuItem> */}
-                                <MenuItem>
+                                {/* <MenuItem>
                                     <ThemeToggleButton />
-                                </MenuItem>
+                                </MenuItem> */}
                             </Box>
                         </Drawer>
                     </Box>
