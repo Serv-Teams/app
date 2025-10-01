@@ -135,7 +135,7 @@ export default function Footer() {
                                 <IconButton
                                     color="inherit"
                                     size="small"
-                                    href="https://instagram.com/serv.adv"
+                                    href="https://instagram.com/serv_agency.id"
                                     aria-label="LinkedIn"
                                     sx={{ alignSelf: 'center' }}
                                 >
@@ -180,10 +180,10 @@ export default function Footer() {
                         <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                             Perusahaan
                         </Typography>
-                        <Link color="text.secondary" variant="body2" href="https://serv-adv.vercel.app/tentang-kami">
+                        <Link color="text.secondary" variant="body2" href="https://serv-agency.vercel.app/tentang-kami">
                             Tentang Kami
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="https://serv-adv.vercel.app">
+                        <Link color="text.secondary" variant="body2" href="https://serv-aagency.vercel.app">
                             Bisnis
                         </Link>
                     </Box>
