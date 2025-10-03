@@ -7,40 +7,50 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Paper } from "@mui/material";
 
-export default function MyTabs({ profile }: { profile: any }) {
+export default function MyTabs({ slug }: { slug: any }) {
     const pathname = usePathname();
 
     // Tentukan tab aktif berdasarkan path
     const currentTab = React.useMemo(() => {
         // if (pathname.startsWith("/tes")) return "/tes";
-        if (pathname === `/tes/${profile}`) return `/tes/${profile}`;
-        if (pathname === `/tes/${profile}/iklan`) return `/tes/${profile}/iklan`;
-        if (pathname === `/tes/${profile}/profil`) return `/tes/${profile}/profil`;
+        if (pathname === `/tes/${slug}`) return `/tes/${slug}`;
+        if (pathname === `/tes/${slug}/iklan`) return `/tes/${slug}/iklan`;
+        if (pathname === `/tes/${slug}/profil`) return `/tes/${slug}/profil`;
+        if (pathname === `/tes/${slug}/blog`) return `/tes/${slug}/blog`;
         return false;
     }, [pathname]);
 
     return (
-        <Tabs value={currentTab}>
-            <Tab
-                label="Beranda"
-                value={`/tes/${profile}`}
-                component={Link}
-                href={`/tes/${profile}`}
-            />
-            <Tab
-                label="Iklan"
-                value={`/tes/${profile}/iklan`}
-                component={Link}
-                href={`/tes/${profile}/iklan`}
-            />
-            <Tab
-                label="Profil"
-                value={`/tes/${profile}/profil`}
-                component={Link}
-                href={`/tes/${profile}/profil`}
-            />
-        </Tabs>
+        <Paper sx={{ mb: 2 }}>
+            <Tabs value={currentTab}>
+                <Tab
+                    label="Beranda"
+                    value={`/tes/${slug}`}
+                    component={Link}
+                    href={`/tes/${slug}`}
+                />
+                <Tab
+                    label="Iklan"
+                    value={`/tes/${slug}/iklan`}
+                    component={Link}
+                    href={`/tes/${slug}/iklan`}
+                />
+                <Tab
+                    label="Profil"
+                    value={`/tes/${slug}/profil`}
+                    component={Link}
+                    href={`/tes/${slug}/profil`}
+                />
+                <Tab
+                    label="Blog"
+                    value={`/tes/${slug}/blog`}
+                    component={Link}
+                    href={`/tes/${slug}/blog`}
+                />
+            </Tabs>
+        </Paper>
     );
 }
 

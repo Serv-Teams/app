@@ -60,7 +60,7 @@ export default async function TabsRouter({
 
     return (
         <Box sx={{ width: "100%" }}>
-            <MyTabs profile={profile.slug} />
+            <MyTabs slug={profile.slug} />
             {/* <CurrentRoute /> */}
             {children}
         </Box>
