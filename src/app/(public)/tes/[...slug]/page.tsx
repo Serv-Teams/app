@@ -78,14 +78,11 @@ export default async function Page(
     // MDX text - can be from a database, CMS, fetch, anywhere...
     const { slug } = await params
 
-    if (slug.length === 1) {
-
-        const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
-
-        if (!profile) {
+    const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
+      if (!profile) {
             notFound()
         }
-
+    if (slug.length === 1) {
         return (
             <div>
                 {
@@ -95,7 +92,6 @@ export default async function Page(
         )
     } else if (slug.length === 2) {
         if (slug[1] === 'iklan') {
-            const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
             const adverts = JSON.parse(JSON.stringify(await getCachedAdverts()))
             return (
                 <Grid container spacing={2} columns={12}>
@@ -133,7 +129,6 @@ export default async function Page(
                 </Grid>
             )
         } else if (slug[1] === 'profil') {
-            const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
             return (
                 <div>
                     {
@@ -150,7 +145,6 @@ export default async function Page(
                 </div>
             )
         } else if (slug[1] === 'blog') {
-            const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
             const blogs = JSON.parse(JSON.stringify(await getBlogs()))
             return (
                  <Blogs blogs={blogs} corporateId={profile._id} slug={profile.slug}/>
