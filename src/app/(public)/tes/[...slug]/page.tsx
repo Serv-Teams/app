@@ -204,7 +204,7 @@ export default async function Page(
         //     </Grid>
         // )
   const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])))
-if(slug[2]!==blog.slug){
+if(!blog){
     notFound()
 }
 return(
