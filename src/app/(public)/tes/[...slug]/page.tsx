@@ -46,6 +46,7 @@ import { getProfile } from '@/actions/corporation/Profile';
 import { getAdvert, getCachedAdverts } from '@/actions/corporation/Advert';
 import { Box, Grid, Typography } from '@mui/material';
 import Blogs from './components/Blogs';
+import Blog from './components/Blog';
 
 
 type Props = {
@@ -205,9 +206,10 @@ export default async function Page(
   const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])))
   if (slug[2]=== blog.slug)
   return(
-    <>
-    {blog.title}
-    </>
+    // <>
+    // {blog.title}
+    // </>
+    <Blog content={blog.content} source={blog.source} title={blog.title} />
   )
     } else {
         notFound()
