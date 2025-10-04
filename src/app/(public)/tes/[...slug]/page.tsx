@@ -14,7 +14,7 @@
 //     }
 
 //     return <div>
-//         My Post: {slug}
+//         My blog: {slug}
 //     </div>
 // }
 
@@ -41,7 +41,7 @@
 import * as React from 'react';
 import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation';
-import { getCachedPosts, getPost } from '@/actions/Post';
+import { getBlogs, getBlog } from '@/actions/corporation/Blog';
 import { getProfile } from '@/actions/corporation/Profile';
 import { getAdvert, getCachedAdverts } from '@/actions/corporation/Advert';
 import { Box, Grid, Typography } from '@mui/material';
@@ -59,8 +59,8 @@ type Props = {
 // ): Promise<Metadata> {
 //     const { slug } = await params
 
-//     const data = JSON.parse(JSON.stringify(await getPost(slug[1])))
-//     const topic = JSON.parse(JSON.stringify(await getPost(slug[0])))
+//     const data = JSON.parse(JSON.stringify(await getBlog(slug[1])))
+//     const topic = JSON.parse(JSON.stringify(await getBlog(slug[0])))
 
 //     return {
 //         title: slug[1] ? `Serv - Blog ${topic.topic}: ${data.title}` : slug[0] ? `Serv - Blog ${topic.topic}` : 'Serv - Tidak ditemukan',
@@ -150,7 +150,7 @@ export default async function Page(
             )
         } else if (slug[1] === 'blog') {
             const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
-            const blogs = JSON.parse(JSON.stringify(await getCachedPosts()))
+            const blogs = JSON.parse(JSON.stringify(await getBlogs()))
             return (
                  <Blogs blogs={blogs} corporateId={profile._id} slug={profile.slug}/>
             )
@@ -202,15 +202,15 @@ export default async function Page(
 
         //     </Grid>
         // )
-  const post = JSON.parse(JSON.stringify(await getPost(slug[2])))
-  if (slug[2]=== post.slug)
+  const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])))
+  if (slug[2]=== blog.slug)
   return(
     <>
-    {post.title}
+    {blog.title}
     </>
   )
-  
-
+    } else {
+        notFound()
     }
 
 
