@@ -220,5 +220,7 @@ return(
 //     }else if (slug[2]!== blog.slug) {
 //             notFound()
 //         }
-    } 
+    } else {
+        notFound()
+    }
 }
