@@ -205,16 +205,14 @@ export default async function Page(
         // )
   const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])))
   if (slug[2]=== blog.slug) {
-return(
-    <>
-    {blog.title}
-    </>
-    // <Blog content={blog.content} source={blog.source} title={blog.title} />
-  )
-  }else {
-        notFound()
-    }
+        return(
+            // <>
+            // {blog.title}
+            // </>
+            <Blog content={blog.content} source={blog.source} title={blog.title} />
+        )
+    }else if (slug[2]!== blog.slug) {
+            notFound()
+        }
     } 
-
-
 }
