@@ -42,11 +42,11 @@ export const getCachedPosts = unstable_cache(
 )
 
 export const getPost = async (slug: string) => {
-    const db = client.db("blog");
-    const post = await db
-        .collection("posts")
+    const db = client.db("corporate");
+    const blog = await db
+        .collection("blogs")
         .findOne({ slug: slug })
-    return post;
+    return blog;
 }
 
 export async function upsertPost(prevState: any, formData: FormData) {
