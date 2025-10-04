@@ -18,7 +18,7 @@ export default function MyTabs({ slug }: { slug: any }) {
         if (pathname === `/tes/${slug}`) return `/tes/${slug}`;
         if (pathname === `/tes/${slug}/iklan`) return `/tes/${slug}/iklan`;
         if (pathname === `/tes/${slug}/profil`) return `/tes/${slug}/profil`;
-        if (pathname === `/tes/${slug}/blog`) return `/tes/${slug}/blog`;
+        if (pathname.startsWith(`/tes/${slug}/blog`)) return `/tes/${slug}/blog`;
         return false;
     }, [pathname]);
 
