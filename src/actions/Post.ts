@@ -30,15 +30,15 @@ function slugify(str: any) {
 
 export const getCachedPosts = unstable_cache(
     async () => {
-        const db = client.db("blog");
-        const posts = await db
-            .collection("posts")
+        const db = client.db("corporate");
+        const blogs = await db
+            .collection("blogs")
             .find({})
             .toArray();
-        return posts;
+        return blogs;
     },
-    ['posts'],
-    { revalidate: 1, tags: ['posts'] }
+    ['blogs'],
+    { revalidate: 1, tags: ['blogs'] }
 )
 
 export const getPost = async (slug: string) => {
