@@ -82,7 +82,7 @@ export default async function Page(
 
         const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
 
-        if (slug[0] !== profile.slug) {
+        if (!profile) {
             notFound()
         }
 
@@ -210,7 +210,9 @@ if(!blog){
 return(
      <Blog content={blog.content} source={blog.source} title={blog.title} />
 )
-    } else {
-        notFound()
     }
+
+    return (
+        notFound()
+    )
 }
