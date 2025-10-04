@@ -45,6 +45,7 @@ import { getCachedPosts, getPost } from '@/actions/Post';
 import { getProfile } from '@/actions/corporation/Profile';
 import { getAdvert, getCachedAdverts } from '@/actions/corporation/Advert';
 import { Box, Grid, Typography } from '@mui/material';
+import Blogs from './components/Blogs';
 
 
 type Props = {
@@ -149,41 +150,42 @@ export default async function Page(
             )
         } else if (slug[1] === 'blog') {
             const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
-            const posts = JSON.parse(JSON.stringify(await getCachedPosts()))
+            const blogs = JSON.parse(JSON.stringify(await getCachedPosts()))
             return (
-                <Grid container spacing={2} columns={12}>
+                // <Grid container spacing={2} columns={12}>
 
-                    {
-                        posts.map((p: any, index: any) => (
-                            profile._id === p.corporateId &&
-                            // <div key={index}>
-                            //     {d.description}
-                            // </div>
-                            <Grid size={{ xs: 12, md: 4 }} key={index}>
+                //     {
+                //         posts.map((p: any, index: any) => (
+                //             profile._id === p.corporateId &&
+                //             // <div key={index}>
+                //             //     {d.description}
+                //             // </div>
+                //             <Grid size={{ xs: 12, md: 4 }} key={index}>
 
 
-                                {/* <iframe loading="lazy" height={280} width="100%" style={{ border: 'none' }}
-                                    src={a.img} allow="fullscreen">
-                                </iframe> */}
-                                <Typography variant="body2" color="text.secondary" gutterBottom>
-                                    {p.title}
-                                    {/* features: limit characters to 100 */}
-                                </Typography>
-                                {/* <Box
-                                    sx={{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        gap: 2,
-                                        alignItems: 'center',
-                                        justifyContent: 'space-between',
-                                        padding: '16px',
-                                    }}
-                                >
-                                </Box> */}
-                            </Grid>
-                        ))
-                    }
-                </Grid>
+                //                 {/* <iframe loading="lazy" height={280} width="100%" style={{ border: 'none' }}
+                //                     src={a.img} allow="fullscreen">
+                //                 </iframe> */}
+                //                 <Typography variant="body2" color="text.secondary" gutterBottom>
+                //                     {p.title}
+                //                     {/* features: limit characters to 100 */}
+                //                 </Typography>
+                //                 {/* <Box
+                //                     sx={{
+                //                         display: 'flex',
+                //                         flexDirection: 'row',
+                //                         gap: 2,
+                //                         alignItems: 'center',
+                //                         justifyContent: 'space-between',
+                //                         padding: '16px',
+                //                     }}
+                //                 >
+                //                 </Box> */}
+                //             </Grid>
+                //         ))
+                //     }
+                // </Grid>
+                 <Blogs blogs={blogs} corporateId={profile._id} />
             )
         } else {
             notFound()
