@@ -96,7 +96,7 @@ function Author(
     );
 }
 
-export default function Blogs({ blogs, corporateId }: { blogs: any[], corporateId: any }) {
+export default function Blogs({ blogs, corporateId, slug }: { blogs: any[], corporateId: any, slug:any }) {
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(
         null,
     );
@@ -192,7 +192,7 @@ export default function Blogs({ blogs, corporateId }: { blogs: any[], corporateI
                                             className="arrow"
                                             sx={{ fontSize: '1rem' }}
                                         /> */}
-                                        <Link href={`/blog/${b.slug[0]}/${b.slug[1]}`} underline="none" color='#ff914d'>
+                                        <Link href={`/tes/${slug}/${b.slug[1]}`} underline="none" color='#ff914d'>
                                             {b.title}
                                             <NavigateNextRoundedIcon
                                                 className="arrow"

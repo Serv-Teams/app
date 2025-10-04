@@ -185,7 +185,7 @@ export default async function Page(
                 //         ))
                 //     }
                 // </Grid>
-                 <Blogs blogs={blogs} corporateId={profile._id} />
+                 <Blogs blogs={blogs} corporateId={profile._id} slug={profile.slug}/>
             )
         } else {
             notFound()
