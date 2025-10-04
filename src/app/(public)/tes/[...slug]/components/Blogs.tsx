@@ -192,7 +192,7 @@ export default function Blogs({ blogs, corporateId, slug }: { blogs: any[], corp
                                             className="arrow"
                                             sx={{ fontSize: '1rem' }}
                                         /> */}
-                                        <Link href={`/tes/${slug}/blog/${b.slug[1]}`} underline="none" color='#ff914d'>
+                                        <Link href={`/tes/${slug}/blog/${b.slug}`} underline="none" color='#ff914d'>
                                             {b.title}
                                             <NavigateNextRoundedIcon
                                                 className="arrow"
