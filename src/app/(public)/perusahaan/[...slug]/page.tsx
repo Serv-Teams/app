@@ -70,20 +70,13 @@ type Props = {
 export default async function Page({ params, searchParams }: Props) {
   // MDX text - can be from a database, CMS, fetch, anywhere...
   const { slug } = await params;
-
+  const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])));
+  if (!profile) {
+    notFound();
+  }
   if (slug.length === 1) {
-    const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])));
-    if (!profile) {
-      notFound();
-    }
-
     return <div>{profile.description}</div>;
   } else if (slug.length === 2) {
-    const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])));
-    if (!profile) {
-      notFound();
-    }
-
     if (slug[1] === "iklan") {
       const adverts = JSON.parse(JSON.stringify(await getAdverts()));
       return (
