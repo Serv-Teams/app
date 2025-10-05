@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { getProfile } from "@/actions/corporation/Profile";
 import MyTabs from "./components/Tabs";
+import { notFound } from "next/navigation";
 
 // function MyTabs() {
 //     const pathname = usePathname();
@@ -57,6 +58,10 @@ export default async function TabsRouter({
 }) {
     const { slug } = await params
     const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
+
+    if (!profile) {
+        notFound()
+    }
 
     return (
         <Box sx={{ width: "100%" }}>

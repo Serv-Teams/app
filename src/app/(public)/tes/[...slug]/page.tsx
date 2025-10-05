@@ -78,10 +78,10 @@ export default async function Page(
     // MDX text - can be from a database, CMS, fetch, anywhere...
     const { slug } = await params
 
-   
+
     if (slug.length === 1) {
-         const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
-      if (!profile) {
+        const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
+        if (!profile) {
             notFound()
         }
 
@@ -93,11 +93,11 @@ export default async function Page(
             </div>
         )
     } else if (slug.length === 2) {
-         const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
-      if (!profile) {
+        const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])))
+        if (!profile) {
             notFound()
         }
-        
+
         if (slug[1] === 'iklan') {
             const adverts = JSON.parse(JSON.stringify(await getCachedAdverts()))
             return (
@@ -154,7 +154,7 @@ export default async function Page(
         } else if (slug[1] === 'blog') {
             const blogs = JSON.parse(JSON.stringify(await getBlogs()))
             return (
-                 <Blogs blogs={blogs} corporateId={profile._id} slug={profile.slug}/>
+                <Blogs blogs={blogs} corporateId={profile._id} slug={profile.slug} />
             )
         } else {
             notFound()
@@ -204,13 +204,13 @@ export default async function Page(
 
         //     </Grid>
         // )
-  const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])))
-if(!blog){
-    notFound()
-}
-return(
-     <Blog content={blog.content} source={blog.source} title={blog.title} />
-)
+        const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])))
+        if (!blog) {
+            notFound()
+        }
+        return (
+            <Blog content={blog.content} source={blog.source} title={blog.title} />
+        )
     }
 
     return (
