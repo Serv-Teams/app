@@ -42,6 +42,3 @@ next-env.d.ts
 
 # ignore route
 /src/app/(auth)/*
-/src/app/(public)/iklan/*
-/src/app/(public)/korporasi/*
-/src/app/(public)/blog/*
