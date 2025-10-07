@@ -26,7 +26,7 @@ export default function MyTabs({ slug }: { slug: any }) {
   }, [pathname]);
 
   return (
-    <Paper sx={{ mb: 2 }}>
+    <Paper sx={{ mb: 8 }}>
       <Tabs value={currentTab}
         variant="scrollable"
         scrollButtons={false}
