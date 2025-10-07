@@ -56,9 +56,9 @@ export default async function TabsRouter({
             <Typography variant="caption">{profile.website}</Typography>
 
           </Box>
-          <Button size="small" variant="outlined" sx={{ ml: 'auto' }} startIcon={<PlusOne fontSize="small" />}>
+          {/* <Button size="small" variant="outlined" sx={{ ml: 'auto' }} startIcon={<PlusOne fontSize="small" />}>
             Ikuti
-          </Button>
+          </Button> */}
         </Box>
       </Paper>
 

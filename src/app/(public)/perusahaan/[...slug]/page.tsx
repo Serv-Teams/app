@@ -46,6 +46,8 @@ import { getAdvert, getAdverts } from "@/actions/perusahaan/Advert";
 import { Box, Grid, Typography } from "@mui/material";
 import Blogs from "./components/Blogs";
 import Blog from "./components/Blog";
+import Profile from "./components/Profile";
+import Adverts from "./components/Adverts";
 
 type Props = {
   params: Promise<{ slug: string[] }>;
@@ -80,51 +82,11 @@ export default async function Page({ params, searchParams }: Props) {
     if (slug[1] === "iklan") {
       const adverts = JSON.parse(JSON.stringify(await getAdverts()));
       return (
-        <Grid container spacing={2} columns={12}>
-          {adverts.map(
-            (a: any, index: any) =>
-              profile._id === a.corpProfileId && (
-                <Grid size={{ xs: 12, md: 4 }} key={index}>
-                  <iframe
-                    loading="lazy"
-                    height={280}
-                    width="100%"
-                    style={{ border: "none" }}
-                    src={a.img}
-                    allow="fullscreen"
-                  ></iframe>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    gutterBottom
-                  >
-                    {a.description}
-                    {/* features: limit characters to 100 */}
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      gap: 2,
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      padding: "16px",
-                    }}
-                  ></Box>
-                </Grid>
-              )
-          )}
-        </Grid>
+        <Adverts adverts={adverts} profile={profile} />
       );
     } else if (slug[1] === "profil") {
       return (
-        <div>
-          {profile.website}
-          <br />
-          {profile.email}
-          <br />
-          {profile.city}
-        </div>
+        <Profile website={profile.website} email={profile.email} city={profile.city} />
       );
     } else if (slug[1] === "blog") {
       const blogs = JSON.parse(JSON.stringify(await getBlogs()));
