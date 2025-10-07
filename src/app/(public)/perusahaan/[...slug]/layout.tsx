@@ -22,7 +22,6 @@ export default async function TabsRouter({
 
   return (
     <Box sx={{ bgcolor: "background.default" }}>
-
       <Paper sx={{ display: "flex", alignItems: "center", gap: 2, p: 2, mb: 2 }} elevation={3}>
         <Box
           sx={{
@@ -56,9 +55,12 @@ export default async function TabsRouter({
             <Typography variant="caption">{profile.website}</Typography>
 
           </Box>
-          {/* <Button size="small" variant="outlined" sx={{ ml: 'auto' }} startIcon={<PlusOne fontSize="small" />}>
-            Ikuti
-          </Button> */}
+          {/* 
+            fitur ikuti/mengikut perusahaan
+            <Button size="small" variant="outlined" sx={{ ml: 'auto' }} startIcon={<PlusOne fontSize="small" />}>
+              Ikuti
+            </Button> 
+          */}
         </Box>
       </Paper>
 
