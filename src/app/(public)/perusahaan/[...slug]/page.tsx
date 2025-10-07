@@ -54,20 +54,22 @@ type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-// export async function generateMetadata(
-//     { params, searchParams }: Props,
-//     parent: ResolvingMetadata
-// ): Promise<Metadata> {
-//     const { slug } = await params
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params
 
-//     const data = JSON.parse(JSON.stringify(await getBlog(slug[1])))
-//     const topic = JSON.parse(JSON.stringify(await getBlog(slug[0])))
+  const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])));
+  if (!profile) {
+    notFound();
+  }
 
-//     return {
-//         title: slug[1] ? `Serv - Blog ${topic.topic}: ${data.title}` : slug[0] ? `Serv - Blog ${topic.topic}` : 'Serv - Tidak ditemukan',
-//         description: slug[1] ? `Serv - Blog ${topic.topic}: ${data.content}` : slug[0] ? `Serv - Blog ${topic.topic}` : 'Serv - Tidak ditemukan',
-//     }
-// }
+  return {
+    title: `Serv - ${profile.name}`,
+    description: `Serv - ${profile.name}`
+  }
+}
 
 export default async function Page({ params, searchParams }: Props) {
   // MDX text - can be from a database, CMS, fetch, anywhere...
@@ -93,56 +95,56 @@ export default async function Page({ params, searchParams }: Props) {
       return (
         <Blogs blogs={blogs} corporateId={profile._id} slug={profile.slug} />
       );
-    } else {
+    }
+    else {
       notFound();
     }
   } else if (slug.length === 3) {
-    // const advert = JSON.parse(JSON.stringify(await getAdvert(slug[2])))
-
-    // if (slug[2] !== advert.slug) {
-    //     notFound()
-    // }
-
-    // let fmt = new Intl.DateTimeFormat('id-ID', {
-    //     dateStyle: "long",
-    //     timeStyle: "short",
-    //     timeZone: "UTC",
-    //     hour12: false
-    // });
-
-    // return (
-    //     <Grid container spacing={2} columns={12}>
-    //         <Grid size={{ xs: 12, md: 12 }}>
-    //             <iframe loading="lazy" height={280} width="100%" style={{ border: 'none' }}
-    //                 src={advert.img} allow="fullscreen">
-    //             </iframe>
-
-    //             <Typography variant="body2" color="text.secondary" gutterBottom>
-    //                 {advert.description}
-    //                 {/* features: limit characters to 100 */}
-    //             </Typography>
-    //             <Box
-    //                 sx={{
-    //                     display: 'flex',
-    //                     flexDirection: 'row',
-    //                     gap: 2,
-    //                     alignItems: 'center',
-    //                     justifyContent: 'space-between',
-    //                     padding: '16px',
-    //                 }}
-    //             >
-    //                 <Typography variant="caption">{fmt.format(new Date(advert.createdAt))}</Typography>
-    //             </Box>
-    //         </Grid>
-
-    //     </Grid>
-    // )
     const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])));
-    if (!blog) {
+    const advert = JSON.parse(JSON.stringify(await getAdvert(slug[2])));
+    if (slug[2] !== blog?.slug && slug[2] !== advert?.slug) {
       notFound();
     }
-    return <Blog content={blog.content} title={blog.title} />;
-  }
 
-  return notFound();
+    if (slug[2] === advert?.slug) {
+      let fmt = new Intl.DateTimeFormat('id-ID', {
+        dateStyle: "long",
+        timeStyle: "short",
+        timeZone: "UTC",
+        hour12: false
+      });
+
+      return (
+        // <div>{advert.description}</div>
+        <Grid container spacing={2} columns={12}>
+          <Grid size={{ xs: 12, md: 12 }}>
+            <iframe loading="lazy" height={280} width="100%" style={{ border: 'none' }}
+              src={advert.img} allow="fullscreen">
+            </iframe>
+
+            <Typography variant="body2" color="text.secondary" gutterBottom>
+              {advert.description}
+              {/* features: limit characters to 100 */}
+            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: 2,
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '16px',
+              }}
+            >
+              <Typography variant="caption">{fmt.format(new Date(advert.createdAt))}</Typography>
+            </Box>
+          </Grid>
+
+        </Grid>
+      )
+    } else if (slug[2] === blog?.slug) {
+      return <Blog content={blog.content} title={blog.title} />;
+    }
+  }
+  // return notFound();
 }

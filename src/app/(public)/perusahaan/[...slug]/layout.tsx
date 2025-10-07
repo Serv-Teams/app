@@ -55,12 +55,14 @@ export default async function TabsRouter({
             <Typography variant="caption">{profile.website}</Typography>
 
           </Box>
-          {/* 
-            fitur ikuti/mengikut perusahaan
-            <Button size="small" variant="outlined" sx={{ ml: 'auto' }} startIcon={<PlusOne fontSize="small" />}>
-              Ikuti
-            </Button> 
-          */}
+          {
+            /* 
+              fitur ikuti/mengikut perusahaan
+              <Button size="small" variant="outlined" sx={{ ml: 'auto' }} startIcon={<PlusOne fontSize="small" />}>
+                Ikuti
+              </Button> 
+            */
+          }
         </Box>
       </Paper>
 
