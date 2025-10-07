@@ -20,14 +20,19 @@ export default function MyTabs({ slug }: { slug: any }) {
       return `/perusahaan/${slug}/iklan`;
     if (pathname === `/perusahaan/${slug}/profil`)
       return `/perusahaan/${slug}/profil`;
-    if (pathname.startsWith(`/perusahaan/${slug}/blog`))
+    if (pathname === `/perusahaan/${slug}/blog`)
       return `/perusahaan/${slug}/blog`;
     return false;
   }, [pathname]);
 
   return (
     <Paper sx={{ mb: 2 }}>
-      <Tabs value={currentTab}>
+      <Tabs value={currentTab}
+        variant="scrollable"
+        scrollButtons={false}
+        textColor="primary"
+        indicatorColor="primary"
+      >
         <Tab
           label="Beranda"
           value={`/perusahaan/${slug}`}
