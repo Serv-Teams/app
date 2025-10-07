@@ -193,9 +193,9 @@ export default function Latest({ posts }: { posts: any }) {
 
     let fmt = new Intl.DateTimeFormat('id-ID', {
         dateStyle: "long",
-        timeStyle: "short",
+        // timeStyle: "short",
         timeZone: "UTC",
-        hour12: false
+        // hour12: false
     });
 
     return (

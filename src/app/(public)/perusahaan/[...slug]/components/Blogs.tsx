@@ -123,9 +123,9 @@ export default function Blogs({
 
   let fmt = new Intl.DateTimeFormat("id-ID", {
     dateStyle: "long",
-    timeStyle: "short",
+    // timeStyle: "short",
     timeZone: "UTC",
-    hour12: false,
+    // hour12: false,
   });
 
   return (
@@ -138,44 +138,6 @@ export default function Blogs({
 
             </div> */}
       <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
-        {/* {articleInfo.map((article, index) => (
-                    <Grid key={index} size={{ xs: 12, sm: 6 }}>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'space-between',
-                                gap: 1,
-                                height: '100%',
-                            }}
-                        >
-                            <Typography gutterBottom variant="caption" component="div">
-                                {article.tag}
-                            </Typography>
-                            <TitleTypography
-                                gutterBottom
-                                variant="h6"
-                                onFocus={() => handleFocus(index)}
-                                onBlur={handleBlur}
-                                tabIndex={0}
-                                className={focusedCardIndex === index ? 'Mui-focused' : ''}
-                            >
-                                {article.title}
-                                <NavigateNextRoundedIcon
-                                    className="arrow"
-                                    sx={{ fontSize: '1rem' }}
-                                />
-                            </TitleTypography>
-                            <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-                                {article.description}
-                            </StyledTypography>
-
-                            <Author
-                                authors={article.authors}
-                            />
-                        </Box>
-                    </Grid>
-                ))} */}
         {blogs.map(
           (b: any, index) =>
             b.corporateId === corporateId && (

@@ -48,6 +48,7 @@ import Blogs from "./components/Blogs";
 import Blog from "./components/Blog";
 import Profile from "./components/Profile";
 import Adverts from "./components/Adverts";
+import Advert from "./components/Advert";
 
 type Props = {
   params: Promise<{ slug: string[] }>;
@@ -107,40 +108,11 @@ export default async function Page({ params, searchParams }: Props) {
     }
 
     if (slug[2] === advert?.slug) {
-      let fmt = new Intl.DateTimeFormat('id-ID', {
-        dateStyle: "long",
-        timeStyle: "short",
-        timeZone: "UTC",
-        hour12: false
-      });
+
 
       return (
         // <div>{advert.description}</div>
-        <Grid container spacing={2} columns={12}>
-          <Grid size={{ xs: 12, md: 12 }}>
-            <iframe loading="lazy" height={280} width="100%" style={{ border: 'none' }}
-              src={advert.img} allow="fullscreen">
-            </iframe>
-
-            <Typography variant="body2" color="text.secondary" gutterBottom>
-              {advert.description}
-              {/* features: limit characters to 100 */}
-            </Typography>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                gap: 2,
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '16px',
-              }}
-            >
-              <Typography variant="caption">{fmt.format(new Date(advert.createdAt))}</Typography>
-            </Box>
-          </Grid>
-
-        </Grid>
+        <Advert img={advert.img} description={advert.description} createdAt={advert.createdAt} />
       )
     } else if (slug[2] === blog?.slug) {
       return <Blog content={blog.content} title={blog.title} />;
