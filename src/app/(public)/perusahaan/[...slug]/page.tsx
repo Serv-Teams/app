@@ -48,7 +48,6 @@ import Blogs from "./components/Blogs";
 import Blog from "./components/Blog";
 import Profile from "./components/Profile";
 import Adverts from "./components/Adverts";
-import Advert from "./components/Advert";
 
 type Props = {
   params: Promise<{ slug: string[] }>;
@@ -107,14 +106,7 @@ export default async function Page({ params, searchParams }: Props) {
       notFound();
     }
 
-    if (slug[2] === advert?.slug) {
-
-
-      return (
-        // <div>{advert.description}</div>
-        <Advert img={advert.img} description={advert.description} createdAt={advert.createdAt} slug={profile.slug} city={profile.city} />
-      )
-    } else if (slug[2] === blog?.slug) {
+    if (slug[2] === blog?.slug) {
       return <Blog content={blog.content} title={blog.title} />;
     }
   }
