@@ -1,18 +1,12 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import InputLabel from '@mui/material/InputLabel';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
-import SitemarkIcon from './SitemarkIcon';
 import { Instagram } from '@mui/icons-material';
 import Image from 'next/image';
 
@@ -163,7 +157,7 @@ export default function Footer() {
                         <Link color="text.secondary" variant="body2" href="/kesehatan">
                             Kesehatan
                         </Link>
-                       {/* <Link color="text.secondary" variant="body2" href="/hukum"> 
+                        {/* <Link color="text.secondary" variant="body2" href="/hukum"> 
                             Hukum
                         </Link>
                         <Link color="text.secondary" variant="body2" href="/pendidikan">
