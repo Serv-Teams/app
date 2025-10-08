@@ -151,31 +151,32 @@ export default function Blogs({
                     height: "100%",
                   }}
                 >
-                  <TitleTypography
-                    gutterBottom
-                    variant="h6"
-                    onFocus={() => handleFocus(index)}
-                    onBlur={handleBlur}
-                    tabIndex={0}
-                    className={focusedCardIndex === index ? "Mui-focused" : ""}
+                  <Link
+                    href={`/perusahaan/${slug}/blog/${b.slug}`}
+                    underline="none"
+                    color="#ff914d"
                   >
-                    {/* {d.title}
+                    <TitleTypography
+                      gutterBottom
+                      variant="h6"
+                      onFocus={() => handleFocus(index)}
+                      onBlur={handleBlur}
+                      tabIndex={0}
+                      className={focusedCardIndex === index ? "Mui-focused" : ""}
+                    >
+                      {/* {d.title}
                                         <NavigateNextRoundedIcon
                                             className="arrow"
                                             sx={{ fontSize: '1rem' }}
                                         /> */}
-                    <Link
-                      href={`/perusahaan/${slug}/blog/${b.slug}`}
-                      underline="none"
-                      color="#ff914d"
-                    >
+
                       {b.title}
                       <NavigateNextRoundedIcon
                         className="arrow"
                         sx={{ fontSize: "1rem" }}
                       />
-                    </Link>
-                  </TitleTypography>
+                    </TitleTypography>
+                  </Link>
                   <StyledTypography
                     variant="body2"
                     color="text.secondary"
@@ -192,7 +193,7 @@ export default function Blogs({
               </Grid>
             )
         )}
-      </Grid>
+      </Grid >
       {/* <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
                 <Pagination hidePrevButton hideNextButton count={10} boundaryCount={10} />
             </Box> */}

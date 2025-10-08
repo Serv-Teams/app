@@ -7,7 +7,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
-import Link from 'next/link';
+import { Link } from '@mui/material';
+
 
 
 const StyledTypography = styled(Typography)({
@@ -99,7 +100,7 @@ export default function Blogs({ blogs, profiles }: { blogs: any[], profiles: any
                             {profiles.map(
                                 (p: any, index: any) =>
                                     b.corporateId === p._id && (
-                                        <Link key={index} href={`/perusahaan/${p.slug}/blog/${b.slug}`}>
+                                        <Link key={index} href={`/perusahaan/${p.slug}/blog/${b.slug}`} underline='none' color='#ff914d'>
                                             <TitleTypography
                                                 gutterBottom
                                                 variant="h6"
