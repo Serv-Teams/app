@@ -130,13 +130,9 @@ export default function Blogs({
 
   return (
     <>
-      {/* <div>
-                <Typography variant="h2" gutterBottom>
-                    {title}
-                </Typography>
-                <Typography>Menyajikan artikel seputar {title}</Typography>
-
-            </div> */}
+      <Typography variant="h5" gutterBottom>
+        Blogs
+      </Typography>
       <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
         {blogs.map(
           (b: any, index) =>

@@ -61,25 +61,12 @@ export default function AppAppBar() {
                         </Button>
 
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                            {/* jika user otentikasi */}
-                            {/* <Button variant="text" color="info" size="small">
-                                Topik Anda
-                            </Button> */}
-                            {/* <Button variant="text" size="medium" sx={{ color: '#ff914d' }} href='/iklan'>
-                                Iklan
-                            </Button> */}
                             <Button variant="text" sx={{ color: '#ff914d' }} size="medium" href='/blog'>
                                 Blog
                             </Button>
-                            {/* <Button variant="text" sx={{ color: '#ff914d' }} size="small">
-                                Hukum
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="medium" href='/iklan'>
+                                Iklan
                             </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="small">
-                                Pendidikan
-                            </Button> */}
-                            {/* <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                                Travel
-                            </Button> */}
                             {/* <Button variant="text" sx={{ color: '#ff914d' }} size="medium" onClick={() => signIn("google", { redirectTo: "/dasbor/iklan" })}>
                                 Masuk
                             </Button> */}
@@ -128,7 +115,7 @@ export default function AppAppBar() {
                                 </Box>
                                 {/* jika user otentikasi */}
                                 <MenuItem component="a" href="/blog">Blog</MenuItem>
-                                {/* <MenuItem component="a" href='/iklan'>Iklan</MenuItem> */}
+                                <MenuItem component="a" href="/iklan">Iklan</MenuItem>
                                 {/* <Divider sx={{ my: 3 }} /> */}
                                 {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
