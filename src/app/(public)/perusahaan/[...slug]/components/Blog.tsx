@@ -44,21 +44,11 @@
 //   );
 // }
 
-"use client";
-
 import * as React from "react";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
-import {
-  Card,
-  Typography,
-  Button,
-  Snackbar,
-  IconButton,
-  Stack,
-} from "@mui/material";
-import ShareIcon from "@mui/icons-material/Share";
-import CloseIcon from "@mui/icons-material/Close";
+import { Card, Typography, Box } from "@mui/material";
+import ShareButton from "./ShareButton"; // ⬅️ client component terpisah
 
 const Selengkapnya = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -79,85 +69,39 @@ const Selengkapnya = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
+// Komponen custom MDX
 const components = {
   Link,
   Selengkapnya,
 };
 
-export default function Blog({
+export default async function Blog({
   content,
   title,
 }: {
   content: any;
   title: string;
 }) {
-  const [open, setOpen] = React.useState(false);
-
-  const handleShare = async () => {
-    const shareData = {
-      title,
-      text: `Baca artikel menarik: ${title}`,
-      url: window.location.href,
-    };
-
-    try {
-      if (navigator.share) {
-        // 🔹 Browser mendukung Web Share API
-        await navigator.share(shareData);
-      } else {
-        // 🔹 Fallback: salin link ke clipboard
-        await navigator.clipboard.writeText(window.location.href);
-        setOpen(true);
-      }
-    } catch (err) {
-      console.error("Gagal membagikan link:", err);
-    }
-  };
-
-  const handleClose = () => setOpen(false);
-
   return (
-    <>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        sx={{ mb: 2 }}
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+      {/* Judul + Tombol Bagikan */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
       >
         <Typography variant="h4" gutterBottom>
           {title}
         </Typography>
 
-        {/* 🔗 Tombol Bagikan */}
-        <Button
-          variant="outlined"
-          startIcon={<ShareIcon />}
-          onClick={handleShare}
-        >
-          Bagikan
-        </Button>
-      </Stack>
+        {/* 🔗 Client Component (Share Button) */}
+        <ShareButton title={title} />
+      </Box>
 
-      {/* 🔹 Konten Blog */}
-      {/* <MDXRemote components={components} source={content} /> */}
-
-      {/* 🔔 Snackbar Notifikasi */}
-      <Snackbar
-        open={open}
-        autoHideDuration={2000}
-        onClose={handleClose}
-        message="Link berhasil disalin ke clipboard!"
-        action={
-          <IconButton
-            size="small"
-            aria-label="close"
-            color="inherit"
-            onClick={handleClose}
-          >
-            <CloseIcon fontSize="small" />
-          </IconButton>
-        }
-      />
-    </>
+      {/* Konten MDX */}
+      <MDXRemote components={components} source={content} />
+    </Box>
   );
 }
