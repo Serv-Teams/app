@@ -1,6 +1,32 @@
-import { Grid, Typography } from "@mui/material";
+'use client';
 
-export default async function Adverts({ adverts, profile }: { adverts: any[], profile: any }) {
+import { Close, NavigateNextRounded, Share } from "@mui/icons-material";
+import { Button, Grid, IconButton, Snackbar, Typography } from "@mui/material";
+import React from "react";
+
+export default function Adverts({ adverts, profile }: { adverts: any[], profile: any }) {
+    const [openSnackbar, setOpenSnackbar] = React.useState(false);
+
+    const handleShare = async (title: string, slug: string) => {
+        const shareUrl = `${window.location.origin}/iklan/${slug}`;
+        const shareData = {
+            title,
+            text: `Lihat iklan menarik: ${title}`,
+            url: shareUrl,
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                await navigator.clipboard.writeText(shareUrl);
+                setOpenSnackbar(true);
+            }
+        } catch (err) {
+            console.error('Gagal membagikan link:', err);
+        }
+    };
+
     let fmt = new Intl.DateTimeFormat('id-ID', {
         dateStyle: "long",
         // timeStyle: "short",
@@ -38,11 +64,46 @@ export default async function Adverts({ adverts, profile }: { adverts: any[], pr
                                         {a.description}
                                         {/* features: limit characters to 100 */}
                                     </Typography>
+                                    <React.Fragment >
+                                        <IconButton
+                                            href={`/perusahaan/${profile.slug}/iklan/${a.slug}`}
+                                            size="small"
+                                        >
+                                            <NavigateNextRounded />
+                                        </IconButton>
 
+                                        {/* 🔗 Tombol Bagikan */}
+                                        <Button
+                                            size="small"
+                                            startIcon={<Share />}
+                                            onClick={() => handleShare(a.description, a.slug)}
+                                        >
+                                            Bagikan
+                                        </Button>
+                                    </React.Fragment>
                                 </Grid>
                             )
                     )}
             </Grid>
+
+
+            {/* 🔔 Snackbar Notifikasi */}
+            <Snackbar
+                open={openSnackbar}
+                autoHideDuration={2000}
+                onClose={() => setOpenSnackbar(false)}
+                message="Link berhasil disalin ke clipboard!"
+                action={
+                    <IconButton
+                        size="small"
+                        aria-label="close"
+                        color="inherit"
+                        onClick={() => setOpenSnackbar(false)}
+                    >
+                        <Close fontSize="small" />
+                    </IconButton>
+                }
+            />
         </>
     )
 }
