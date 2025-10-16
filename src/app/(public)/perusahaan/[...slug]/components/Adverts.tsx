@@ -18,7 +18,7 @@ export default async function Adverts({ adverts, profile }: { adverts: any[], pr
                 {
                     adverts.map(
                         (a: any, index: any) =>
-                            profile._id === a.corpProfileId && (
+                            profile._id === a.companyId && (
                                 <Grid size={{ xs: 12, md: 4 }} key={index}>
                                     <iframe
                                         loading="lazy"

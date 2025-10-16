@@ -102,11 +102,11 @@ function Author({
 
 export default function Blogs({
   blogs,
-  corporateId,
+  companyId,
   slug,
 }: {
   blogs: any[];
-  corporateId: any;
+  companyId: any;
   slug: any;
 }) {
   const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(
@@ -136,7 +136,7 @@ export default function Blogs({
       <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
         {blogs.map(
           (b: any, index) =>
-            b.corporateId === corporateId && (
+            b.companyId === companyId && (
               <Grid key={index} size={{ xs: 12, sm: 6 }}>
                 <Box
                   sx={{

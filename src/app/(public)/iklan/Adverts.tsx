@@ -112,7 +112,7 @@ export default function Adverts({ adverts, profiles }: { adverts: any[], profile
                                     <AvatarGroup max={3}>
                                         {profiles.map(
                                             (p: any, index: any) =>
-                                                a.corporateId === p._id && (
+                                                a.companyId === p._id && (
                                                     <Box
                                                         component="iframe"
                                                         src={p.logo}
@@ -134,7 +134,7 @@ export default function Adverts({ adverts, profiles }: { adverts: any[], profile
                                     <Typography variant="caption">
                                         {profiles.map(
                                             (p: any) =>
-                                                a.corporateId === p._id && (
+                                                a.companyId === p._id && (
                                                     p.name
                                                 )
                                         )}
@@ -147,7 +147,7 @@ export default function Adverts({ adverts, profiles }: { adverts: any[], profile
                             <CardActions>
                                 {profiles.map(
                                     (p: any, index: any) =>
-                                        a.corporateId === p._id && (
+                                        a.companyId === p._id && (
                                             <IconButton key={index} href={`/perusahaan/${p.slug}/iklan/${a.slug}`} size="small">
                                                 <Send />
                                             </IconButton>

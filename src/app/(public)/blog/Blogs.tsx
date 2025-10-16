@@ -1090,7 +1090,7 @@ export default function Blogs({ blogs, profiles }: { blogs: any[]; profiles: any
 
                                 {profiles.map(
                                     (p: any, index: any) =>
-                                        b.corporateId === p._id && (
+                                        b.companyId === p._id && (
                                             <Link
                                                 key={index}
                                                 href={`/perusahaan/${p.slug}/blog/${b.slug}`}
@@ -1139,7 +1139,7 @@ export default function Blogs({ blogs, profiles }: { blogs: any[]; profiles: any
                                         <AvatarGroup max={3}>
                                             {profiles.map(
                                                 (p: any, index: any) =>
-                                                    b.corporateId === p._id && (
+                                                    b.companyId === p._id && (
                                                         <Box
                                                             component="iframe"
                                                             src={p.logo}
@@ -1159,7 +1159,7 @@ export default function Blogs({ blogs, profiles }: { blogs: any[]; profiles: any
                                             )}
                                         </AvatarGroup>
                                         <Typography variant="caption">
-                                            {profiles.map((p: any) => b.corporateId === p._id && p.name)}
+                                            {profiles.map((p: any) => b.companyId === p._id && p.name)}
                                         </Typography>
                                     </Box>
                                     <Typography variant="caption">

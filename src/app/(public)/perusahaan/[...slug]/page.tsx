@@ -94,7 +94,7 @@ export default async function Page({ params, searchParams }: Props) {
     } else if (slug[1] === "blog") {
       const blogs = JSON.parse(JSON.stringify(await getBlogs()));
       return (
-        <Blogs blogs={blogs} corporateId={profile._id} slug={profile.slug} />
+        <Blogs blogs={blogs} companyId={profile._id} slug={profile.slug} />
       );
     }
     else {
