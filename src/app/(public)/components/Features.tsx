@@ -14,25 +14,25 @@ import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 const items = [
     {
         icon: <ViewQuiltRoundedIcon />,
-        title: 'Strategi Konten',
+        title: 'Mudah Cari Mitra / Produk',
         description:
-            'Mempromosikan bisnis Anda lewat iklan online dengan strategi konten yang sudah disesuaikan dengan bisnis Anda.',
+            'Filter, kategori, dan sistem pencarian pintar untuk menemukan sesuai kebutuhan.',
         imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-light.png")`,
         imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-dark.png")`,
     },
     {
         icon: <EdgesensorHighRoundedIcon />,
-        title: 'Pembuatan Halaman Website Company Profile',
+        title: 'Dashboard & Manajemen Untuk Perusahaan',
         description:
-            'Memperkenalkan bisnis Anda dan mengarahkan calon pelanggan Anda ke platform bisnis Anda.',
+            'Perusahaan bisa kelola layanan, produk, order, dan komunikasi dengan klien/mitra.',
         imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-light.png")`,
         imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-dark.png")`,
     },
     {
         icon: <DevicesRoundedIcon />,
-        title: 'Tersedianya Customer Services',
+        title: 'Proses Aman & Transparan',
         description:
-            'Menyediakan sistem Customer Service yang handal dan bisa menunjang bisnis Anda.',
+            'Kontrak / kesepakatan + pembayaran / invoice (opsional) untuk transaksi antar perusahaan.',
         imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-light.png")`,
         imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-dark.png")`,
     },
@@ -151,7 +151,7 @@ export default function Features() {
                     gutterBottom
                     sx={{ color: 'text.primary' }}
                 >
-                    Layanan Kami
+            Fitur & Keunggulan
                 </Typography>
                 <Typography
                     variant="body1"
