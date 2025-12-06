@@ -83,7 +83,9 @@ export default async function Blog({
   title: string;
 }) {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", 
+    // gap: 2
+     }}>
       {/* Judul + Tombol Bagikan */}
       <Box
         sx={{
