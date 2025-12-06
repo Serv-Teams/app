@@ -948,7 +948,7 @@ export default function Blogs({ blogs, profiles }: { blogs: any[]; profiles: any
     const [searchQuery, setSearchQuery] = React.useState('');
 
     const blogsPerPage = 10;
-    const fmt = new Intl.DateTimeFormat('id-ID', { dateStyle: 'long', timeZone: 'UTC' });
+    const fmt = new Intl.DateTimeFormat('id-ID', { month: 'long', year: "numeric", timeZone: 'UTC' });
 
     // 🔹 Ambil semua topic unik
     const topics = React.useMemo(() => {
