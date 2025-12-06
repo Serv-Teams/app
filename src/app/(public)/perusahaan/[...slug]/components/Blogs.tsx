@@ -122,8 +122,9 @@ export default function Blogs({
   };
 
   let fmt = new Intl.DateTimeFormat("id-ID", {
-    dateStyle: "long",
+    month: "long",
     // timeStyle: "short",
+    year: "numeric",
     timeZone: "UTC",
     // hour12: false,
   });
