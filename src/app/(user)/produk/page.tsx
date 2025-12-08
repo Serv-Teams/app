@@ -1,30 +1,16 @@
-// import * as React from 'react';
-// import Adverts from './Adverts';
-// import { getBlogs } from '@/actions/perusahaan/Blog';
-// import { getProfiles } from '@/actions/perusahaan/Profile';
-// import { notFound } from 'next/navigation';
-// import { getAdverts } from '@/actions/perusahaan/Advert';
-
-// export default async function Page() {
-//     const adverts = JSON.parse(JSON.stringify(await getAdverts()));
-//     const profiles = JSON.parse(JSON.stringify(await getProfiles()));
-
-//     if (!adverts || !profiles) {
-//         return notFound();
-//     }
-
-//     return (
-//         <Adverts adverts={adverts} profiles={profiles} />
-//     );
-// }
-
 import * as React from 'react';
-import Adverts from './Adverts';
 import Products from './Products'
 import { getBlogs } from '@/actions/perusahaan/Blog';
 import { getProfiles } from '@/actions/perusahaan/Profile';
 import { notFound } from 'next/navigation';
 import { getProducts } from '@/actions/perusahaan/Product';
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Serv | Produk',
+    description: 'Menampilkan daftar produk yang ditawarkan oleh para perusahaan.',
+}
 
 export default async function Page() {
     const products = JSON.parse(JSON.stringify(await getProducts()));
@@ -35,7 +21,6 @@ export default async function Page() {
     }
 
     return (
-        // <Adverts products={products} profiles={profiles} />
         <Products products={products} profiles={profiles} />
     );
 }

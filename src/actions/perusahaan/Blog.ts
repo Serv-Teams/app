@@ -30,7 +30,7 @@ function slugify(str: any) {
 
 export const getBlogs = unstable_cache(
     async () => {
-        const db = client.db("corporate");
+        const db = client.db("marketplace");
         const blogs = await db
             .collection("blogs")
             .find({})
@@ -42,7 +42,7 @@ export const getBlogs = unstable_cache(
 )
 
 export const getBlog = async (slug: string) => {
-    const db = client.db("corporate");
+    const db = client.db("marketplace");
     const blog = await db
         .collection("blogs")
         .findOne({ slug: slug })

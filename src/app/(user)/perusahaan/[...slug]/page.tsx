@@ -42,14 +42,11 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { getBlogs, getBlog } from "@/actions/perusahaan/Blog";
 import { getProfile } from "@/actions/perusahaan/Profile";
-import { getAdvert, getAdverts } from "@/actions/perusahaan/Advert";
 import { getProduct, getProducts } from "@/actions/perusahaan/Product";
 import { Box, Grid, Typography } from "@mui/material";
 import Blogs from "./components/Blogs";
 import Blog from "./components/Blog";
 import Profile from "./components/Profile";
-import Adverts from "./components/Adverts";
-import Advert from "./components/Advert";
 import Products from "./components/Products";
 import Product from "./components/Product";
 
@@ -86,10 +83,8 @@ export default async function Page({ params, searchParams }: Props) {
     return <div>{profile.description}</div>;
   } else if (slug.length === 2) {
     if (slug[1] === "produk") {
-      // const adverts = JSON.parse(JSON.stringify(await getAdverts()));
       const products = JSON.parse(JSON.stringify(await getProducts()));
       return (
-        // <Adverts adverts={adverts} profile={profile} />
         <Products products={products} profile={profile} />
       );
     } else if (slug[1] === "profil") {
@@ -107,7 +102,6 @@ export default async function Page({ params, searchParams }: Props) {
     }
   } else if (slug.length === 3) {
     const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])));
-    // const advert = JSON.parse(JSON.stringify(await getAdvert(slug[2])));
     const product = JSON.parse(JSON.stringify(await getProduct(slug[2])));
     if (slug[2] !== blog?.slug && slug[2] !== product?.slug) {
       notFound();
@@ -117,7 +111,6 @@ export default async function Page({ params, searchParams }: Props) {
       return <Blog content={blog.content} title={blog.title} />;
     } else if (slug[2] === product?.slug) {
       return <Product name={product.name} description={product.description} variants={product.variants} />
-      // <Advert description={product.description} img={product.img} />
     }
   }
   // return notFound();

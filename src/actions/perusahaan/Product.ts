@@ -30,7 +30,7 @@ function slugify(str: any) {
 
 export const getProducts = unstable_cache(
   async () => {
-    const db = client.db("corporate");
+    const db = client.db("marketplace");
     const products = await db.collection("products").find({}).toArray();
     return products;
   },
@@ -39,7 +39,7 @@ export const getProducts = unstable_cache(
 );
 
 export const getProduct = async (slug: string) => {
-  const db = client.db("corporate");
+  const db = client.db("marketplace");
   const product = await db.collection("products").findOne({ slug: slug });
   return product;
 };
