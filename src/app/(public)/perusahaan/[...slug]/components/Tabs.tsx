@@ -16,8 +16,8 @@ export default function MyTabs({ slug }: { slug: any }) {
   const currentTab = React.useMemo(() => {
     // if (pathname.startsWith("/tes")) return "/tes";
     if (pathname === `/perusahaan/${slug}`) return `/perusahaan/${slug}`;
-    if (pathname === `/perusahaan/${slug}/iklan`)
-      return `/perusahaan/${slug}/iklan`;
+    if (pathname === `/perusahaan/${slug}/produk`)
+      return `/perusahaan/${slug}/produk`;
     if (pathname === `/perusahaan/${slug}/profil`)
       return `/perusahaan/${slug}/profil`;
     if (pathname === `/perusahaan/${slug}/blog`)
@@ -40,10 +40,10 @@ export default function MyTabs({ slug }: { slug: any }) {
           href={`/perusahaan/${slug}`}
         />
         <Tab
-          label="Iklan"
-          value={`/perusahaan/${slug}/iklan`}
+          label="Produk"
+          value={`/perusahaan/${slug}/produk`}
           component={Link}
-          href={`/perusahaan/${slug}/iklan`}
+          href={`/perusahaan/${slug}/produk`}
         />
         <Tab
           label="Profil"

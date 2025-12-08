@@ -64,8 +64,8 @@ export default function AppAppBar() {
                             <Button variant="text" sx={{ color: '#ff914d' }} size="medium" href='/blog'>
                                 Blog
                             </Button>
-                            <Button variant="text" sx={{ color: '#ff914d' }} size="medium" href='/iklan'>
-                                Iklan
+                            <Button variant="text" sx={{ color: '#ff914d' }} size="medium" href='/produk'>
+                                Produk
                             </Button>
                             {/* <Button variant="text" sx={{ color: '#ff914d' }} size="medium" onClick={() => signIn("google", { redirectTo: "/dasbor/iklan" })}>
                                 Masuk
@@ -115,7 +115,7 @@ export default function AppAppBar() {
                                 </Box>
                                 {/* jika user otentikasi */}
                                 <MenuItem component="a" href="/blog">Blog</MenuItem>
-                                <MenuItem component="a" href="/iklan">Iklan</MenuItem>
+                                <MenuItem component="a" href="/produk">Produk</MenuItem>
                                 {/* <Divider sx={{ my: 3 }} /> */}
                                 {/* <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>

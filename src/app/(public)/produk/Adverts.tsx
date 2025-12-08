@@ -242,10 +242,10 @@ export default function Adverts({ adverts, profiles }: { adverts: any[]; profile
     };
 
     const handleShare = async (title: string, slug: string) => {
-        const shareUrl = `${window.location.origin}/iklan/${slug}`;
+        const shareUrl = `${window.location.origin}/produk/${slug}`;
         const shareData = {
             title,
-            text: `Lihat iklan menarik: ${title}`,
+            text: `Lihat produk menarik: ${title}`,
             url: shareUrl,
         };
 
@@ -269,7 +269,7 @@ export default function Adverts({ adverts, profiles }: { adverts: any[]; profile
     return (
         <div>
             <Typography variant="h2" gutterBottom>
-                Iklan
+                Produk
             </Typography>
             <Grid container spacing={2} columns={12}>
                 {adverts.map((a: any, index: any) => (
@@ -335,7 +335,7 @@ export default function Adverts({ adverts, profiles }: { adverts: any[]; profile
                                         a.companyId === p._id && (
                                             <React.Fragment key={idx}>
                                                 <IconButton
-                                                    href={`/perusahaan/${p.slug}/iklan/${a.slug}`}
+                                                    href={`/perusahaan/${p.slug}/produk/${a.slug}`}
                                                     size="small"
                                                 >
                                                     <NavigateNextRoundedIcon />

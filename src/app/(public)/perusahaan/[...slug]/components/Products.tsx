@@ -4,7 +4,7 @@ import { Close, NavigateNextRounded, Share } from "@mui/icons-material";
 import { Button, Grid, IconButton, Snackbar, Typography } from "@mui/material";
 import React from "react";
 
-export default function Adverts({ adverts, profile }: { adverts: any[], profile: any }) {
+export default function Products({ products, profile }: { products: any[], profile: any }) {
     const [openSnackbar, setOpenSnackbar] = React.useState(false);
 
     const handleShare = async (title: string, slug: string) => {
@@ -42,11 +42,11 @@ export default function Adverts({ adverts, profile }: { adverts: any[], profile:
             </Typography>
             <Grid container spacing={2} columns={12}>
                 {
-                    adverts.map(
-                        (a: any, index: any) =>
-                            profile._id === a.companyId && (
+                    products.map(
+                        (p: any, index: any) =>
+                            profile._id === p.corpId && (
                                 <Grid size={{ xs: 12, md: 4 }} key={index}>
-                                    <iframe
+                                    {/* <iframe
                                         loading="lazy"
                                         height={280}
                                         width="100%"
@@ -54,19 +54,19 @@ export default function Adverts({ adverts, profile }: { adverts: any[], profile:
                                         src={a.img}
                                         allow="fullscreen"
                                     >
-                                    </iframe>
-                                    <Typography variant="caption">{fmt.format(new Date(a.createdAt))}</Typography>
+                                    </iframe> */}
+                                    <Typography variant="caption">{fmt.format(new Date(p.createdAt))}</Typography>
                                     <Typography
                                         variant="body2"
                                         color="text.secondary"
                                         gutterBottom
                                     >
-                                        {a.description}
+                                        {p.description}
                                         {/* features: limit characters to 100 */}
                                     </Typography>
                                     <React.Fragment >
                                         <IconButton
-                                            href={`/perusahaan/${profile.slug}/produk/${a.slug}`}
+                                            href={`/perusahaan/${profile.slug}/produk/${p.slug}`}
                                             size="small"
                                         >
                                             <NavigateNextRounded />
@@ -76,7 +76,7 @@ export default function Adverts({ adverts, profile }: { adverts: any[], profile:
                                         <Button
                                             size="small"
                                             startIcon={<Share />}
-                                            onClick={() => handleShare(a.description, a.slug)}
+                                            onClick={() => handleShare(p.description, p.slug)}
                                         >
                                             Bagikan
                                         </Button>
