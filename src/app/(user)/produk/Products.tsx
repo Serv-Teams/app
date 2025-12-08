@@ -272,7 +272,7 @@ export default function Products({ products, profiles }: { products: any[]; prof
                 Produk
             </Typography>
             <Grid container spacing={2} columns={12}>
-                {products.map((p: any, index: any) => (
+                {products.map((prod: any, index: any) => (
                     // <Grid key={index} size={{ xs: 12, md: 6 }}>
                     //     <Card sx={{ maxWidth: 345 }}>
                     //         <Box
@@ -355,12 +355,16 @@ export default function Products({ products, profiles }: { products: any[]; prof
                     //         </CardActions>
                     //     </Card>
                     // </Grid>
-                    <div key={index}>
-                        <p>{p.name}</p>
-                        <p>{p.description}</p>
-                        <p>{fmt.format(new Date(p.createdAt))}</p>
-                    </div>
-                ))}
+                    profiles.map(
+                        (prof: any, index: any) =>
+                            prod.corpId === prof._id && (
+                                <div key={index}>
+                                    <p>{prod.name}</p>
+                                    <p>{prod.description}</p>
+                                    <p>{fmt.format(new Date(prod.createdAt))}</p>
+                                    <a href={`/perusahaan/${prof.slug}/produk/${prod.slug}`}>Lihat Detail</a>
+                                </div>
+                            ))))}
             </Grid>
 
             {/* 🔔 Snackbar Notifikasi */}

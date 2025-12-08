@@ -116,7 +116,7 @@ export default async function Page({ params, searchParams }: Props) {
     if (slug[2] === blog?.slug) {
       return <Blog content={blog.content} title={blog.title} />;
     } else if (slug[2] === product?.slug) {
-      return <Product description={product.description} />
+      return <Product name={product.name} description={product.description} variants={product.variants} />
       // <Advert description={product.description} img={product.img} />
     }
   }
