@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Products from './Products'
-import { getBlogs } from '@/actions/perusahaan/Blog';
-import { getProfiles } from '@/actions/perusahaan/Profile';
+import { getCompanies } from '@/actions/perusahaan/Company';
 import { notFound } from 'next/navigation';
 import { getProducts } from '@/actions/perusahaan/Product';
 
@@ -14,13 +13,13 @@ export const metadata: Metadata = {
 
 export default async function Page() {
     const products = JSON.parse(JSON.stringify(await getProducts()));
-    const profiles = JSON.parse(JSON.stringify(await getProfiles()));
+    const companies = JSON.parse(JSON.stringify(await getCompanies()));
 
-    if (!products || !profiles) {
+    if (!products || !companies) {
         return notFound();
     }
 
     return (
-        <Products products={products} profiles={profiles} />
+        <Products products={products} companies={companies} />
     );
 }

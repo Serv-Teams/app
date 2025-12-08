@@ -41,12 +41,14 @@ import * as React from "react";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { getBlogs, getBlog } from "@/actions/perusahaan/Blog";
-import { getProfile } from "@/actions/perusahaan/Profile";
+// import { getProfile } from "@/actions/perusahaan/Profile";
+import { getCompany } from "@/actions/perusahaan/Company";
 import { getProduct, getProducts } from "@/actions/perusahaan/Product";
 import { Box, Grid, Typography } from "@mui/material";
 import Blogs from "./components/Blogs";
 import Blog from "./components/Blog";
 import Profile from "./components/Profile";
+import Company from "./components/Company";
 import Products from "./components/Products";
 import Product from "./components/Product";
 
@@ -61,40 +63,41 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await params
 
-  const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])));
-  if (!profile) {
+  const company = JSON.parse(JSON.stringify(await getCompany(slug[0])));
+  if (!company) {
     notFound();
   }
 
   return {
-    title: `Serv - ${profile.name}`,
-    description: `Serv - ${profile.name}`
+    title: `Serv - ${company.name}`,
+    description: `Serv - ${company.name}`
   }
 }
 
 export default async function Page({ params, searchParams }: Props) {
   // MDX text - can be from a database, CMS, fetch, anywhere...
   const { slug } = await params;
-  const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])));
-  if (!profile) {
+  const company = JSON.parse(JSON.stringify(await getCompany(slug[0])));
+  if (!company) {
     notFound();
   }
   if (slug.length === 1) {
-    return <div>{profile.description}</div>;
+    return <div>{company.description}</div>;
   } else if (slug.length === 2) {
     if (slug[1] === "produk") {
       const products = JSON.parse(JSON.stringify(await getProducts()));
       return (
-        <Products products={products} profile={profile} />
+        <Products products={products} company={company} />
       );
     } else if (slug[1] === "profil") {
       return (
-        <Profile website={profile.website} email={profile.email} city={profile.city} />
+        // <Profile website={profile.website} email={profile.email} city={profile.city} />
+        <Company website={company.website} email={company.email} city={company.city} />
       );
     } else if (slug[1] === "blog") {
       const blogs = JSON.parse(JSON.stringify(await getBlogs()));
       return (
-        <Blogs blogs={blogs} companyId={profile._id} slug={profile.slug} />
+        <Blogs blogs={blogs} companyId={company._id} slug={company.slug} />
       );
     }
     else {

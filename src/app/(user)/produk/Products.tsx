@@ -123,7 +123,7 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
     },
 }));
 
-export default function Products({ products, profiles }: { products: any[]; profiles: any[] }) {
+export default function Products({ products, companies }: { products: any[]; companies: any[] }) {
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);
     const [openSnackbar, setOpenSnackbar] = React.useState(false);
 
@@ -249,7 +249,7 @@ export default function Products({ products, profiles }: { products: any[]; prof
                     //         </CardActions>
                     //     </Card>
                     // </Grid>
-                    profiles.map(
+                    companies.map(
                         (prof: any, index: any) =>
                             prod.corpId === prof._id && (
                                 <div key={index}>

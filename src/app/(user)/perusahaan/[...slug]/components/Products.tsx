@@ -4,7 +4,7 @@ import { Close, NavigateNextRounded, Share } from "@mui/icons-material";
 import { Button, Grid, IconButton, Snackbar, Typography } from "@mui/material";
 import React from "react";
 
-export default function Products({ products, profile }: { products: any[], profile: any }) {
+export default function Products({ products, company }: { products: any[], company: any }) {
     const [openSnackbar, setOpenSnackbar] = React.useState(false);
 
     const handleShare = async (title: string, slug: string) => {
@@ -44,7 +44,7 @@ export default function Products({ products, profile }: { products: any[], profi
                 {
                     products.map(
                         (p: any, index: any) =>
-                            profile._id === p.corpId && (
+                            company._id === p.corpId && (
                                 <Grid size={{ xs: 12, md: 4 }} key={index}>
                                     {/* <iframe
                                         loading="lazy"
@@ -66,7 +66,7 @@ export default function Products({ products, profile }: { products: any[], profi
                                     </Typography>
                                     <React.Fragment >
                                         <IconButton
-                                            href={`/perusahaan/${profile.slug}/produk/${p.slug}`}
+                                            href={`/perusahaan/${company.slug}/produk/${p.slug}`}
                                             size="small"
                                         >
                                             <NavigateNextRounded />

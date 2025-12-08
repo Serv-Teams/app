@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { getProfile } from "@/actions/perusahaan/Profile";
+import { getCompany } from "@/actions/perusahaan/Company";
 import MyTabs from "./components/Tabs";
 import { notFound } from "next/navigation";
 import { AppBar, Button, Container, IconButton, Paper, Typography } from "@mui/material";
@@ -14,9 +14,9 @@ export default async function TabsRouter({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const profile = JSON.parse(JSON.stringify(await getProfile(slug[0])));
+  const company = JSON.parse(JSON.stringify(await getCompany(slug[0])));
 
-  if (!profile) {
+  if (!company) {
     notFound();
   }
 
@@ -36,23 +36,23 @@ export default async function TabsRouter({
           }}
         >
           <iframe
-            src={profile.logo}
-            title={profile.name}
+            src={company.logo}
+            title={company.name}
             width="100%"
             height="100%"
             style={{ border: 'none' }}
           />
         </Box>
         <Box>
-          <Typography variant="h5">{profile.name}</Typography>
-          <Typography variant="body2" color="text.secondary">{profile.industry}</Typography>
+          <Typography variant="h5">{company.name}</Typography>
+          <Typography variant="body2" color="text.secondary">{company.industry}</Typography>
           <Box
             sx={{ mt: 1, mb: 2, display: "flex", gap: 1, alignItems: "center" }}
           >
             <LocationOn fontSize="small" />
-            <Typography variant="caption">{profile.city}</Typography>
+            <Typography variant="caption">{company.city}</Typography>
             <Language fontSize="small" sx={{ ml: 2 }} />
-            <Typography variant="caption">{profile.website}</Typography>
+            <Typography variant="caption">{company.website}</Typography>
 
           </Box>
           {
@@ -66,7 +66,7 @@ export default async function TabsRouter({
         </Box>
       </Paper>
 
-      <MyTabs slug={profile.slug} />
+      <MyTabs slug={company.slug} />
       {/* <CurrentRoute /> */}
       {children}
     </Box>

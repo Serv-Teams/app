@@ -65,7 +65,7 @@ const TitleTypography = styled(Typography)(({ theme }: any) => ({
     },
 }));
 
-export default function Blogs({ blogs, profiles }: { blogs: any[]; profiles: any[] }) {
+export default function Blogs({ blogs, companies }: { blogs: any[]; companies: any[] }) {
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);
     const [page, setPage] = React.useState(1);
     const [selectedTopic, setSelectedTopic] = React.useState('Semua');
@@ -213,7 +213,7 @@ export default function Blogs({ blogs, profiles }: { blogs: any[]; profiles: any
                                     {b.topic}
                                 </Typography>
 
-                                {profiles.map(
+                                {companies.map(
                                     (p: any, index: any) =>
                                         b.companyId === p._id && (
                                             <Link
@@ -262,7 +262,7 @@ export default function Blogs({ blogs, profiles }: { blogs: any[]; profiles: any
                                         }}
                                     >
                                         <AvatarGroup max={3}>
-                                            {profiles.map(
+                                            {companies.map(
                                                 (p: any, index: any) =>
                                                     b.companyId === p._id && (
                                                         <Box
@@ -284,7 +284,7 @@ export default function Blogs({ blogs, profiles }: { blogs: any[]; profiles: any
                                             )}
                                         </AvatarGroup>
                                         <Typography variant="caption">
-                                            {profiles.map((p: any) => b.companyId === p._id && p.name)}
+                                            {companies.map((p: any) => b.companyId === p._id && p.name)}
                                         </Typography>
                                     </Box>
                                     <Typography variant="caption">

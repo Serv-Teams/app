@@ -28,7 +28,7 @@ function slugify(str: any) {
     .replace(/-+/g, "-"); // remove consecutive hyphens
 }
 
-export const getProfiles = unstable_cache(
+export const getCompanies = unstable_cache(
   async () => {
     const db = client.db("marketplace");
     const companies = await db.collection("companies").find({}).toArray();
@@ -38,7 +38,7 @@ export const getProfiles = unstable_cache(
   { revalidate: 1, tags: ["companies"] }
 );
 
-export const getProfile = async (slug: string) => {
+export const getCompany = async (slug: string) => {
   const db = client.db("marketplace");
   const company = await db.collection("companies").findOne({ slug: slug });
   return company;
