@@ -39,6 +39,11 @@ export default function Product({ name, description, variants }: { name: any; de
                                 <Box key={index} sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
                                     <Typography variant="h6">{v.name}</Typography>
                                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>{v.description}</Typography>
+                                    {
+                                        v.features.map((feature: any, fIndex: any) => (
+                                            <Typography key={fIndex} variant="body2" sx={{ mt: 1 }}>- {feature}</Typography>
+                                        ))
+                                    }
                                     <Typography variant="subtitle1" sx={{ mt: 1 }}>Harga: {v.price}</Typography>
                                 </Box>
                             ))

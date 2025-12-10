@@ -69,8 +69,8 @@ export async function generateMetadata(
   }
 
   return {
-    title: `Serv - ${company.name}`,
-    description: `Serv - ${company.name}`
+    title: `Serv - ${company.name} ${slug[0] === company.slug ? '| Beranda' : slug[1] === "produk" ? '| Produk' : slug[1] === "profil" ? '| Profil' : slug[1] === "blog" ? '| Blog' : '| Tidak Diketahui'}`,
+    description: `Serv - ${company.description} | `
   }
 }
 
