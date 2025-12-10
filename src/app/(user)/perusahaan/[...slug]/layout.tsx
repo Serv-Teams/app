@@ -7,28 +7,6 @@ import { AppBar, Button, Container, IconButton, Paper, Typography } from "@mui/m
 import { Language, LocationOn, MoreVert, PlusOne } from "@mui/icons-material";
 import { Metadata, ResolvingMetadata } from "next";
 
-type Props = {
-  params: Promise<{ slug: string[] }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
-
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const { slug } = await params
-
-  const company = JSON.parse(JSON.stringify(await getCompany(slug[0])));
-  if (!company) {
-    notFound();
-  }
-
-  return {
-    title: `Serv - ${company.name} | `,
-    description: `Serv - ${company.name} | `
-  }
-}
-
 export default async function Layout({
   children,
   params,
