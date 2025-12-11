@@ -49,6 +49,7 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import { Card, Typography, Box } from "@mui/material";
 import ShareButton from "./ShareButton"; // ⬅️ client component terpisah
+import AdsenseAd from "./AdsenseAd";
 
 const Selengkapnya = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -83,9 +84,10 @@ export default async function Blog({
   title: string;
 }) {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", 
-    // gap: 2
-     }}>
+    <Box sx={{
+      display: "flex", flexDirection: "column",
+      // gap: 2
+    }}>
       {/* Judul + Tombol Bagikan */}
       <Box
         sx={{
@@ -97,6 +99,11 @@ export default async function Blog({
         <Typography variant="h4" gutterBottom>
           {title}
         </Typography>
+
+        <Box sx={{ my: 2 }}>
+          <AdsenseAd adSlot="3580768307" />
+        </Box>
+
 
         {/* 🔗 Client Component (Share Button) */}
         <ShareButton title={title} />
