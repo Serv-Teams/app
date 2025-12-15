@@ -52,35 +52,52 @@ import Company from "./components/Company";
 import Products from "./components/Products";
 import Product from "./components/Product";
 
+
 type Props = {
-  params: Promise<{ slug: string[] }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
 
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { slug } = await params
+  const slug = (await params).slug
 
   const company = JSON.parse(JSON.stringify(await getCompany(slug[0])));
-  if (!company) {
-    notFound();
-  }
+  const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])));
+  const product = JSON.parse(JSON.stringify(await getProduct(slug[2])));
 
   return {
-    title: `Serv - ${company.name} ${slug[0] === company.slug ? '| Beranda' : slug[1] === "produk" ? '| Produk' : slug[1] === "profil" ? '| Profil' : slug[1] === "blog" ? '| Blog' : '| Tidak Diketahui'}`,
-    description: `Serv - ${company.description} | `
+    title:
+      slug.length === 1 ? company.name :
+        slug.length === 2 ? (
+          slug[1] === "produk" ? `${company.name} - Produk` :
+            slug[1] === "profil" ? `${company.name} - Profil` :
+              slug[1] === "blog" ? `${company.name} - Blog` : 'Tidak Diketahui') :
+          slug.length === 3 ? (
+            slug[2] === blog.slug ? `${company.name} - ${blog.title}` :
+              slug[2] === product.slug ? `${company.name} - ${product.name}` : 'Tidak Diketahui') : 'Perusahaan',
+    description:
+      slug.length === 1 ? company.name :
+        slug.length === 2 ? (
+          slug[1] === "produk" ? `${company.name} - Produk` :
+            slug[1] === "profil" ? `${company.name} - Profil` :
+              slug[1] === "blog" ? `${company.name} - Blog` : 'Tidak Diketahui') :
+          slug.length === 3 ? (
+            slug[2] === blog.slug ? `${company.name} - ${blog.title}` :
+              slug[2] === product.slug ? `${company.name} - ${product.name}` : 'Tidak Diketahui') : 'Perusahaan',
   }
 }
 
 export default async function Page({ params, searchParams }: Props) {
-  // MDX text - can be from a database, CMS, fetch, anywhere...
   const { slug } = await params;
+
   const company = JSON.parse(JSON.stringify(await getCompany(slug[0])));
   if (!company) {
     notFound();
   }
+
   if (slug.length === 1) {
     return <div>{company.description}</div>;
   } else if (slug.length === 2) {

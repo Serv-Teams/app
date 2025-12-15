@@ -23,7 +23,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 const StyledTypography = styled(Typography)({
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: 2,
+    WebkitLineClamp: 3,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
 });

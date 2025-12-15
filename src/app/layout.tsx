@@ -9,7 +9,7 @@ import AdSense from './components/AdSense';
 
 export const metadata: Metadata = {
   title: 'Serv',
-  description: 'Kami bergerak dan berfokus di jasa pemasaran',
+  description: 'Aplikasi marketplace jasa dan produk untuk pelaku UMKM',
 }
 
 export default function RootLayout(props: { children: React.ReactNode }) {
