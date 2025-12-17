@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import Link from 'next/link';
 import {
     Box,
     Typography,
@@ -105,7 +106,7 @@ export default function Produk(
                                     </CardContent>
                                     {/* CTA Button */}
                                     <CardActions>
-                                        <Button size="small" variant="contained" fullWidth>
+                                        <Button component={Link} href="/halaman-tujuan" size="small" variant="contained" fullWidth>
                                             Kunjungi
                                         </Button>
                                     </CardActions>
