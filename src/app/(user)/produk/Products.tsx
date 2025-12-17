@@ -1,283 +1,118 @@
-// 'use client'
-
-// import * as React from 'react';
-// import AvatarGroup from '@mui/material/AvatarGroup';
-// import Box from '@mui/material/Box';
-// import Grid from '@mui/material/Grid';
-// import Typography from '@mui/material/Typography';
-// import { styled } from '@mui/material/styles';
-// import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
-// import { Button, Card, CardActions, CardContent, IconButton, Link } from '@mui/material';
-// import { Send } from '@mui/icons-material';
-
-
-
-// const StyledTypography = styled(Typography)({
-//     display: '-webkit-box',
-//     WebkitBoxOrient: 'vertical',
-//     WebkitLineClamp: 2,
-//     overflow: 'hidden',
-//     textOverflow: 'ellipsis',
-// });
-
-// const TitleTypography = styled(Typography)(({ theme }) => ({
-//     position: 'relative',
-//     textDecoration: 'none',
-//     '&:hover': { cursor: 'pointer' },
-//     '& .arrow': {
-//         visibility: 'hidden',
-//         position: 'absolute',
-//         right: 0,
-//         top: '50%',
-//         transform: 'translateY(-50%)',
-//     },
-//     '&:hover .arrow': {
-//         visibility: 'visible',
-//         opacity: 0.7,
-//     },
-//     '&:focus-visible': {
-//         outline: '3px solid',
-//         outlineColor: 'hsla(210, 98%, 48%, 0.5)',
-//         outlineOffset: '3px',
-//         borderRadius: '8px',
-//     },
-//     '&::before': {
-//         content: '""',
-//         position: 'absolute',
-//         width: 0,
-//         height: '1px',
-//         bottom: 0,
-//         left: 0,
-//         backgroundColor: (theme.vars || theme).palette.text.primary,
-//         opacity: 0.3,
-//         transition: 'width 0.3s ease, opacity 0.3s ease',
-//     },
-//     '&:hover::before': {
-//         width: '100%',
-//     },
-// }));
-
 'use client'
 
-import * as React from 'react';
-import AvatarGroup from '@mui/material/AvatarGroup';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
-import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
+import React from "react";
 import {
-    Button,
+    Box,
+    Typography,
+    Grid,
     Card,
-    CardActions,
+    CardMedia,
     CardContent,
-    IconButton,
-    Link,
-    Snackbar,
-} from '@mui/material';
-import { Send, Share } from '@mui/icons-material';
-import CloseIcon from '@mui/icons-material/Close';
+    CardActions,
+    Button,
+    Rating
+} from "@mui/material";
 
-const StyledTypography = styled(Typography)({
-    display: '-webkit-box',
-    WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: 2,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-});
+// Contoh data rekomendasi
+const recommendations = [
+    {
+        id: 1,
+        image: "https://via.placeholder.com/150",
+        name: "Crispy Chicken Snack",
+        price: "Rp25.000",
+        rating: 4.5,
+    },
+    {
+        id: 2,
+        image: "https://via.placeholder.com/150",
+        name: "Local Honey Bottle",
+        price: "Rp45.000",
+        rating: 4,
+    },
+    {
+        id: 3,
+        image: "https://via.placeholder.com/150",
+        name: "Organic Herbal Drink",
+        price: "Rp30.000",
+        rating: 4.2,
+    },
+    {
+        id: 4,
+        image: "https://via.placeholder.com/150",
+        name: "Premium Coffee Beans",
+        price: "Rp60.000",
+        rating: 4.7,
+    }
+];
 
-const TitleTypography = styled(Typography)(({ theme }) => ({
-    position: 'relative',
-    textDecoration: 'none',
-    '&:hover': { cursor: 'pointer' },
-    '& .arrow': {
-        visibility: 'hidden',
-        position: 'absolute',
-        right: 0,
-        top: '50%',
-        transform: 'translateY(-50%)',
-    },
-    '&:hover .arrow': {
-        visibility: 'visible',
-        opacity: 0.7,
-    },
-    '&:focus-visible': {
-        outline: '3px solid',
-        outlineColor: 'hsla(210, 98%, 48%, 0.5)',
-        outlineOffset: '3px',
-        borderRadius: '8px',
-    },
-    '&::before': {
-        content: '""',
-        position: 'absolute',
-        width: 0,
-        height: '1px',
-        bottom: 0,
-        left: 0,
-        backgroundColor: (theme.vars || theme).palette.text.primary,
-        opacity: 0.3,
-        transition: 'width 0.3s ease, opacity 0.3s ease',
-    },
-    '&:hover::before': {
-        width: '100%',
-    },
-}));
+export default function Produk(
+    { products, companies }: { products: any[]; companies: any[] }
+) {
 
-export default function Products({ products, companies }: { products: any[]; companies: any[] }) {
-    const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);
-    const [openSnackbar, setOpenSnackbar] = React.useState(false);
+    const getPriceRange = (variants: any[]) => {
+        const prices = variants.map(v => v.price);
+        const min = Math.min(...prices);
+        const max = Math.max(...prices);
 
-    const handleFocus = (index: number) => {
-        setFocusedCardIndex(index);
+        const format = (value: number) =>
+            value.toLocaleString("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                minimumFractionDigits: 0,
+            });
+
+        return min === max
+            ? format(min)
+            : `${format(min)} - ${format(max)}`;
     };
-
-    const handleBlur = () => {
-        setFocusedCardIndex(null);
-    };
-
-    const handleShare = async (title: string, slug: string) => {
-        const shareUrl = `${window.location.origin}/produk/${slug}`;
-        const shareData = {
-            title,
-            text: `Lihat produk menarik: ${title}`,
-            url: shareUrl,
-        };
-
-        try {
-            if (navigator.share) {
-                await navigator.share(shareData);
-            } else {
-                await navigator.clipboard.writeText(shareUrl);
-                setOpenSnackbar(true);
-            }
-        } catch (err) {
-            console.error('Gagal membagikan link:', err);
-        }
-    };
-
-    const fmt = new Intl.DateTimeFormat('id-ID', {
-        dateStyle: 'long',
-        timeZone: 'UTC',
-    });
 
     return (
-        <div>
-            <Typography variant="h2" gutterBottom>
+        <Box sx={{ py: 4, px: 2 }}>
+            {/* Judul Bagian */}
+            <Typography variant="h5" fontWeight="bold" sx={{ mb: 3 }}>
                 Produk
             </Typography>
-            <Grid container spacing={2} columns={12}>
-                {products.map((prod: any, index: any) => (
-                    // <Grid key={index} size={{ xs: 12, md: 6 }}>
-                    //     <Card sx={{ maxWidth: 345 }}>
-                    //         <Box
-                    //             component="iframe"
-                    //             src={a.img}
-                    //             title={a.description}
-                    //             allowFullScreen
-                    //             sx={{
-                    //                 width: '100%',
-                    //                 height: 200,
-                    //                 border: '1px solid',
-                    //                 borderColor: 'divider',
-                    //             }}
-                    //         />
-                    //         <CardContent>
-                    //             <Box
-                    //                 sx={{
-                    //                     display: 'flex',
-                    //                     flexDirection: 'row',
-                    //                     gap: 1,
-                    //                     alignItems: 'center',
-                    //                     mb: 2,
-                    //                 }}
-                    //             >
-                    //                 <AvatarGroup max={3}>
-                    //                     {profiles.map(
-                    //                         (p: any, index: any) =>
-                    //                             a.companyId === p._id && (
-                    //                                 <Box
-                    //                                     component="iframe"
-                    //                                     src={p.logo}
-                    //                                     title={p.name}
-                    //                                     aria-label={p.slug}
-                    //                                     key={index}
-                    //                                     sx={{
-                    //                                         width: 24,
-                    //                                         height: 24,
-                    //                                         borderRadius: '50%',
-                    //                                         border: 'none',
-                    //                                         overflow: 'hidden',
-                    //                                         display: 'inline-block',
-                    //                                     }}
-                    //                                 />
-                    //                             )
-                    //                     )}
-                    //                 </AvatarGroup>
-                    //                 <Typography variant="caption">
-                    //                     {profiles.map(
-                    //                         (p: any) => a.companyId === p._id && p.name
-                    //                     )}
-                    //                 </Typography>
-                    //             </Box>
-                    //             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    //                 {a.description}
-                    //             </Typography>
-                    //         </CardContent>
-                    //         <CardActions>
-                    //             {profiles.map(
-                    //                 (p: any, idx: any) =>
-                    //                     a.companyId === p._id && (
-                    //                         <React.Fragment key={idx}>
-                    //                             <IconButton
-                    //                                 href={`/perusahaan/${p.slug}/produk/${a.slug}`}
-                    //                                 size="small"
-                    //                             >
-                    //                                 <NavigateNextRoundedIcon />
-                    //                             </IconButton>
 
-                    //                             {/* 🔗 Tombol Bagikan */}
-                    //                             <Button
-                    //                                 size="small"
-                    //                                 startIcon={<Share />}
-                    //                                 onClick={() => handleShare(a.description, a.slug)}
-                    //                             >
-                    //                                 Bagikan
-                    //                             </Button>
-                    //                         </React.Fragment>
-                    //                     )
-                    //             )}
-                    //         </CardActions>
-                    //     </Card>
-                    // </Grid>
-                    companies.map(
-                        (prof: any, index: any) =>
-                            prod.corpId === prof._id && (
-                                <div key={index}>
-                                    <p>{prod.name}</p>
-                                    <p>{prod.description}</p>
-                                    <p>{fmt.format(new Date(prod.createdAt))}</p>
-                                    <a href={`/perusahaan/${prof.slug}/produk/${prod.slug}`}>Lihat Detail</a>
-                                </div>
-                            ))))}
+            {/* Grid Produk */}
+            <Grid container spacing={3}>
+                {products.map((product, index: any) => (
+                    companies.map((company) =>
+                        product.corpId === company._id && (
+                            <Grid size={{ xs: 12, md: 3, sm: 6 }} key={index}>
+                                <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                                    {/* Gambar Produk */}
+                                    <CardMedia
+                                        component="img"
+                                        height="140"
+                                        image={product.image}
+                                        alt={product.name}
+                                    />
+                                    {/* Nama & Harga */}
+                                    <CardContent sx={{ flexGrow: 1 }}>
+                                        <Typography variant="subtitle1" gutterBottom>
+                                            {product.name}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {getPriceRange(product.variants)}
+                                        </Typography>
+                                        {/* Rating */}
+                                        <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
+                                            <Rating value={product.rating} precision={0.1} readOnly size="small" />
+                                            <Typography variant="caption" sx={{ ml: 0.5 }}>
+                                                {product.rating}
+                                            </Typography>
+                                        </Box>
+                                    </CardContent>
+                                    {/* CTA Button */}
+                                    <CardActions>
+                                        <Button size="small" variant="contained" fullWidth>
+                                            Kunjungi
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                            </Grid>
+                        ))))}
             </Grid>
-
-            {/* 🔔 Snackbar Notifikasi */}
-            {/* <Snackbar
-                open={openSnackbar}
-                autoHideDuration={2000}
-                onClose={() => setOpenSnackbar(false)}
-                message="Link berhasil disalin ke clipboard!"
-                action={
-                    <IconButton
-                        size="small"
-                        aria-label="close"
-                        color="inherit"
-                        onClick={() => setOpenSnackbar(false)}
-                    >
-                        <CloseIcon fontSize="small" />
-                    </IconButton>
-                }
-            /> */}
-        </div>
+        </Box>
     );
 }

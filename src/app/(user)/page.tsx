@@ -555,17 +555,17 @@ export default function Page() {
 
 
   return (
-      <div>
-        <Features />
-        <Divider />
-        <Highlights />
-        <Divider />
-        <Testimonials />
-        <Divider />
-        <Pricing />
-        <Divider />
-        <FAQ />
-        <Divider />
-      </div>
+    <div>
+      <Features />
+      <Divider />
+      <Highlights />
+      <Divider />
+      <Testimonials />
+      {/* <Divider />
+        <Pricing /> */}
+      <Divider />
+      <FAQ />
+      <Divider />
+    </div>
   );
 }

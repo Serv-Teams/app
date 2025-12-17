@@ -238,7 +238,7 @@ export default function Hero() {
                             width: { sm: '100%', md: '80%' },
                         }}
                     >
-                        Kami membantu&nbsp;
+                        Marketplace untuk&nbsp;
                         <Typography
                             // component="span"
                             // variant="h1"
@@ -250,7 +250,7 @@ export default function Hero() {
                                 }),
                             })}
                         >
-                            bisnis Anda
+                            Semua Kebutuhanmu
                         </Typography>
                     </Typography>
                     <Typography
@@ -263,9 +263,8 @@ export default function Hero() {
                         {/* Explore our cutting-edge dashboard, delivering high-quality solutions
                         tailored to your needs. Elevate your experience with top-tier features
                         and services. */}
-                        Beri tahu kami persyaratan, anggaran, dan jadwal proyek Anda,
-                        dan kami akan menghubungkan Anda dengan memberikan saran
-                        yang sesuai dengan kebutuhan Anda.
+                        Temukan produk terbaik dari berbagai penjual,
+                        bandingkan harga, dan nikmati pengalaman belanja cepat & aman.
                     </Typography>
                     {/* <Stack
                         direction={{ xs: 'column', sm: 'row' }}

@@ -52,7 +52,7 @@ export default function FAQ() {
                         id="panel1d-header"
                     >
                         <Typography component="h3" variant="subtitle2">
-                            Apa itu "Serv"?
+                            Bagaimana cara daftar di Serv?
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -61,10 +61,7 @@ export default function FAQ() {
                             gutterBottom
                             sx={{ maxWidth: { sm: '100%', md: '70%' } }}
                         >
-                            Serv adalah sebuah tim yang berisikan para ahli di bidangnya
-                            yang berfokus membantu para pelaku bisnis
-                            memperjualkan jasa/produk di bagian pemasaran, khususnya
-                            pemasaran berbentuk digital/non fisik.
+                            hhjhbjb
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -78,7 +75,7 @@ export default function FAQ() {
                         id="panel2d-header"
                     >
                         <Typography component="h3" variant="subtitle2">
-                            Apa itu pemasaran berbentuk digital?
+                            Apa metode pembayaran yang diterima?
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -87,10 +84,7 @@ export default function FAQ() {
                             gutterBottom
                             sx={{ maxWidth: { sm: '100%', md: '70%' } }}
                         >
-                            Pemasaran berbentuk digital adalah promosi bisnis
-                            melalui saluran digital seperti company profile,
-                            Search Engine Optimization (SEO), email,
-                            atau iklan berbayar daring.
+                            jgjjvhg
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -104,7 +98,7 @@ export default function FAQ() {
                         id="panel3d-header"
                     >
                         <Typography component="h3" variant="subtitle2">
-                            Mengapa pemasaran berbentuk digital sangat penting?
+                            Bagaimana retur / refund?
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -113,13 +107,7 @@ export default function FAQ() {
                             gutterBottom
                             sx={{ maxWidth: { sm: '100%', md: '70%' } }}
                         >
-                            Pemasaran berbentuk digital menyediakan cara bagi perusahaan
-                            untuk mengembangkan audiens mereka, meningkatkan laba,
-                            dan membangun hubungan yang lebih baik dengan
-                            pelanggan lama dan baru.
-                            Pemasaran berbentuk digital juga memungkinkan para pelaku bisnis
-                            untuk menargetkan audiens yang lebih spesifik atau khusus dan
-                            lebih mudah untuk mengukur hasilnya.
+                            kjbjkbkbk
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -133,7 +121,7 @@ export default function FAQ() {
                         id="panel4d-header"
                     >
                         <Typography component="h3" variant="subtitle2">
-                            Berapa lama waktu yang dihabiskan untuk pemasaran lewat Google Ads/Meta Ads?
+                            Apakah ada biaya layanan?
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -142,11 +130,7 @@ export default function FAQ() {
                             gutterBottom
                             sx={{ maxWidth: { sm: '100%', md: '70%' } }}
                         >
-                            Waktu yang dihabiskan untuk pemasaran lewat Google Ads dan Meta Ads bervariasi,
-                            namun umumnya kampanye kesadaran membutuhkan minimal satu minggu atau lebih
-                            untuk mendapatkan data yang signifikan, sementara optimalisasi penuh pada Google Ads
-                            bisa memakan waktu hingga tiga bulan. Untuk Meta Ads,
-                            kampanye pertimbangan disarankan berjalan selama 5-6 minggu untuk melihat hasil yang ideal.
+                            hjvgcfg
                         </Typography>
                     </AccordionDetails>
                 </Accordion>

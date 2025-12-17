@@ -14,25 +14,33 @@ import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 const items = [
     {
         icon: <ViewQuiltRoundedIcon />,
-        title: 'Mudah Cari Mitra / Produk',
+        title: 'Cari & Bandingkan Produk',
         description:
-            'Filter, kategori, dan sistem pencarian pintar untuk menemukan sesuai kebutuhan.',
+            'temukan penawaran terbaik.',
         imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-light.png")`,
         imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-dark.png")`,
     },
     {
         icon: <EdgesensorHighRoundedIcon />,
-        title: 'Dashboard & Manajemen Untuk Perusahaan',
+        title: 'Review & Rating',
         description:
-            'Perusahaan bisa kelola layanan, produk, order, dan komunikasi dengan klien/mitra.',
+            'lihat ulasan asli pembeli.',
         imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-light.png")`,
         imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-dark.png")`,
     },
     {
         icon: <DevicesRoundedIcon />,
-        title: 'Proses Aman & Transparan',
+        title: 'Pembayaran Aman',
         description:
-            'Kontrak / kesepakatan + pembayaran / invoice (opsional) untuk transaksi antar perusahaan.',
+            'multi-opsi & dilindungi.',
+        imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-light.png")`,
+        imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-dark.png")`,
+    },
+    {
+        icon: <DevicesRoundedIcon />,
+        title: 'Pengiriman Cepat & Tracking',
+        description:
+            'lacak pesanan realtime.',
         imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-light.png")`,
         imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-dark.png")`,
     },
@@ -151,15 +159,13 @@ export default function Features() {
                     gutterBottom
                     sx={{ color: 'text.primary' }}
                 >
-            Fitur & Keunggulan
+                    Fitur Utama
                 </Typography>
                 <Typography
                     variant="body1"
                     sx={{ color: 'text.secondary', mb: { xs: 2, sm: 4 } }}
                 >
                     Berikan gambaran singkat tentang fitur-fitur utama layanan kami.
-                    Misalnya, Anda dapat mencantumkan jumlah fitur,
-                    jenis atau manfaatnya, dan fitur tambahan.
                 </Typography>
             </Box>
             <Box

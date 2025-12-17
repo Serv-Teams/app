@@ -1,136 +1,94 @@
-"use client";
-
-import * as React from "react";
+import React from "react";
 import {
-    Avatar,
     Box,
-    Button,
-    Container,
-    Divider,
-    Grid,
-    IconButton,
-    Tab,
-    Tabs,
     Typography,
+    Grid,
+    Card,
+    CardMedia,
+    CardContent,
+    CardActions,
+    Button,
+    Rating
 } from "@mui/material";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import GridOnIcon from "@mui/icons-material/GridOn";
-import MovieFilterOutlinedIcon from "@mui/icons-material/MovieFilterOutlined";
-import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 
-export default function InstagramProfile() {
-    const [tab, setTab] = React.useState(0);
-    const posts = Array.from({ length: 12 }).map((_, i) => ({
-        id: i,
-        image: `https://picsum.photos/seed/${i}/400/400`,
-    }));
+// Contoh data rekomendasi
+const recommendations = [
+    {
+        id: 1,
+        image: "https://via.placeholder.com/150",
+        name: "Crispy Chicken Snack",
+        price: "Rp25.000",
+        rating: 4.5,
+    },
+    {
+        id: 2,
+        image: "https://via.placeholder.com/150",
+        name: "Local Honey Bottle",
+        price: "Rp45.000",
+        rating: 4,
+    },
+    {
+        id: 3,
+        image: "https://via.placeholder.com/150",
+        name: "Organic Herbal Drink",
+        price: "Rp30.000",
+        rating: 4.2,
+    },
+    {
+        id: 4,
+        image: "https://via.placeholder.com/150",
+        name: "Premium Coffee Beans",
+        price: "Rp60.000",
+        rating: 4.7,
+    }
+];
 
+export default function RecommendationSection() {
     return (
-        <Container maxWidth="md" sx={{ py: 4 }}>
-            {/* HEADER */}
-            <Box sx={{ display: "flex", alignItems: "center", gap: 6, mb: 4 }}>
-                {/* Profile Avatar */}
-                <Avatar
-                    src="https://upload.wikimedia.org/wikipedia/en/b/bf/Oasis_-_band_logo.svg"
-                    alt="Oasis"
-                    sx={{ width: 140, height: 140, bgcolor: "#eee" }}
-                />
+        <Box sx={{ py: 4, px: 2 }}>
+            {/* Judul Bagian */}
+            <Typography variant="h5" fontWeight="bold" sx={{ mb: 3 }}>
+                Rekomendasi Untukmu
+            </Typography>
 
-                {/* Profile Info */}
-                <Box sx={{ flex: 1 }}>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
-                        <Typography variant="h5" fontWeight={500}>
-                            oasis
-                        </Typography>
-                        <Button variant="outlined" size="small">Ikuti</Button>
-                        <Button variant="outlined" size="small">Kirim Pesan</Button>
-                        <IconButton>
-                            <MoreHorizIcon />
-                        </IconButton>
-                        <IconButton>
-                            <SettingsOutlinedIcon />
-                        </IconButton>
-                    </Box>
-
-                    {/* Stats */}
-                    <Box sx={{ display: "flex", gap: 3, mb: 2 }}>
-                        <Typography variant="body2">
-                            <strong>436</strong> postingan
-                        </Typography>
-                        <Typography variant="body2">
-                            <strong>2.3M</strong> pengikut
-                        </Typography>
-                        <Typography variant="body2">
-                            <strong>10</strong> mengikuti
-                        </Typography>
-                    </Box>
-
-                    {/* Bio */}
-                    <Box>
-                        <Typography fontWeight={600}>Oasis</Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Rock band from Manchester. 🎸
-                        </Typography>
-                        <Typography variant="body2" color="primary">
-                            oasisinet.com
-                        </Typography>
-                    </Box>
-                </Box>
-            </Box>
-
-            <Divider sx={{ mb: 2 }} />
-
-            {/* NAVIGATION TABS */}
-            <Tabs
-                value={tab}
-                onChange={(e, v) => setTab(v)}
-                centered
-                textColor="inherit"
-                indicatorColor="primary"
-                sx={{
-                    "& .MuiTab-root": {
-                        minWidth: "unset",
-                        mx: 2,
-                    },
-                }}
-            >
-                <Tab icon={<GridOnIcon />} iconPosition="start" label="POSTS" />
-                <Tab icon={<MovieFilterOutlinedIcon />} iconPosition="start" label="REELS" />
-                <Tab icon={<AccountBoxOutlinedIcon />} iconPosition="start" label="TAGGED" />
-            </Tabs>
-
-            <Divider sx={{ mb: 3 }} />
-
-            {/* GRID POSTS */}
-            <Grid container spacing={1}>
-                {posts.map((post) => (
-                    <Grid size={{ xs: 4 }} key={post.id}>
-                        <Box
-                            sx={{
-                                position: "relative",
-                                width: "100%",
-                                paddingTop: "100%", // 1:1 aspect ratio
-                                overflow: "hidden",
-                                bgcolor: "#000",
-                            }}
-                        >
-                            <img
-                                src={post.image}
-                                alt={`Post ${post.id}`}
-                                style={{
-                                    position: "absolute",
-                                    top: 0,
-                                    left: 0,
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover",
-                                }}
+            {/* Grid Produk */}
+            <Grid container spacing={3}>
+                {recommendations.map((product) => (
+                    <Grid size={{ xs: 12, md: 3, sm: 6 }} key={product.id}>
+                        <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                            {/* Gambar Produk */}
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image={product.image}
+                                alt={product.name}
                             />
-                        </Box>
+                            {/* Nama & Harga */}
+                            <CardContent sx={{ flexGrow: 1 }}>
+                                <Typography variant="subtitle1" gutterBottom>
+                                    {product.name}
+                                </Typography>
+                                <Typography variant="subtitle2" color="primary">
+                                    {product.price}
+                                </Typography>
+                                {/* Rating */}
+                                <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
+                                    <Rating value={product.rating} precision={0.1} readOnly size="small" />
+                                    <Typography variant="caption" sx={{ ml: 0.5 }}>
+                                        {product.rating}
+                                    </Typography>
+                                </Box>
+                            </CardContent>
+                            {/* CTA Button */}
+                            <CardActions>
+                                <Button size="small" variant="contained" fullWidth>
+                                    Beli Sekarang
+                                </Button>
+                            </CardActions>
+                        </Card>
                     </Grid>
                 ))}
             </Grid>
-        </Container>
+        </Box>
     );
 }

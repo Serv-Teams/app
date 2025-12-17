@@ -15,13 +15,13 @@ import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 const items = [
     {
         icon: <SettingsSuggestRoundedIcon />,
-        title: 'Performa yang dapat disesuaikan',
+        title: 'Seller tepercaya',
         description:
             'Produk kami dengan mudah disesuaikan dengan kebutuhan Anda, meningkatkan efisiensi dan menyederhanakan tugas Anda.',
     },
     {
         icon: <ConstructionRoundedIcon />,
-        title: 'Dibuat untuk bertahan lama',
+        title: 'Proses checkout cepat dan aman',
         description:
             'Rasakan daya tahan yang tak tertandingi, yang melampaui investasi yang bertahan lama.',
     },
@@ -78,7 +78,7 @@ export default function Highlights() {
                     }}
                 >
                     <Typography component="h2" variant="h4" gutterBottom>
-                        Standar Kami
+                        Keunggulan
                     </Typography>
                     <Typography variant="body1"
                         sx={{ color: 'text.secondary' }}

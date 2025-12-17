@@ -11,18 +11,18 @@ import { useTheme } from '@mui/system';
 const userTestimonials = [
     {
         avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />,
-        name: 'Tim IT',
-        occupation: 'Frontend Developer, Backend Developer, & DevOps Engineer',
+        name: 'Merek A',
+        occupation: 'testimoni Merek A',
     },
     {
         avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />,
-        name: 'Tim Editor',
-        occupation: 'Lead Product Designer',
+        name: 'Merek B',
+        occupation: 'testimoni Merek B',
     },
     {
         avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />,
-        name: 'Tim Media Sosial',
-        occupation: 'Content Writer, Social Media Specialist, & SEO Engineer',
+        name: 'Merek C',
+        occupation: 'testimoni Merek C',
     },
 ];
 
@@ -73,12 +73,11 @@ export default function Testimonials() {
                     gutterBottom
                     sx={{ color: 'text.primary' }}
                 >
-                    Tim Kami
+                    Testimoni
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    Berbeda dengan tim dari agensi besar,
-                    kami akan memperlakukan proyek Anda sebagai proyek kami.
-                    Kami akan memandu Anda melalui proses yang lancar dan sederhana.
+                    Temukan mengapa produk kami unggul: kemampuan beradaptasi, daya tahan, desain yang ramah pengguna, dan inovasi.
+                    Nikmati dukungan pelanggan yang andal dan ketelitian dalam setiap detail.
                 </Typography>
             </Box>
             <Grid container spacing={2}>

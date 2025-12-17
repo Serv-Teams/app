@@ -138,7 +138,8 @@ export default function Footer() {
                             </Stack>
                         </Box>
                     </Box>
-                    <Box
+
+                    {/* <Box
                         sx={{
                             display: { xs: 'none', sm: 'flex' },
                             flexDirection: 'column',
@@ -157,13 +158,8 @@ export default function Footer() {
                         <Link color="text.secondary" variant="body2" href="/kesehatan">
                             Kesehatan
                         </Link>
-                        {/* <Link color="text.secondary" variant="body2" href="/hukum"> 
-                            Hukum
-                        </Link>
-                        <Link color="text.secondary" variant="body2" href="/pendidikan">
-                            Pendidikan
-                        </Link> */}
-                    </Box>
+                    </Box> */}
+
                     <Box
                         sx={{
                             display: { xs: 'none', sm: 'flex' },
