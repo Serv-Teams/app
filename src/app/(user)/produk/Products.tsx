@@ -77,7 +77,7 @@ export default function Produk(
             <Grid container spacing={3}>
                 {products.map((product, index: any) => (
                     companies.map((company) =>
-                        product.corpId === company._id && (
+                        product.companyId === company._id && (
                             <Grid size={{ xs: 12, md: 3, sm: 6 }} key={index}>
                                 <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                                     {/* Gambar Produk */}

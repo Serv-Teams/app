@@ -76,7 +76,7 @@ export async function generateMetadata(
             slug[1] === "profil" ? `${company.name} - Profil` :
               slug[1] === "blog" ? `${company.name} - Blog` : 'Tidak Diketahui') :
           slug.length === 3 ? (
-            slug[2] === blog.slug ? `${company.name} - ${blog.title}` :
+            slug[2] === blog?.slug ? `${company.name} - ${blog.title}` :
               slug[2] === product.slug ? `${company.name} - ${product.name}` : 'Tidak Diketahui') : 'Perusahaan',
     description:
       slug.length === 1 ? company.name :
@@ -85,7 +85,7 @@ export async function generateMetadata(
             slug[1] === "profil" ? `${company.name} - Profil` :
               slug[1] === "blog" ? `${company.name} - Blog` : 'Tidak Diketahui') :
           slug.length === 3 ? (
-            slug[2] === blog.slug ? `${company.name} - ${blog.title}` :
+            slug[2] === blog?.slug ? `${company.name} - ${blog.title}` :
               slug[2] === product.slug ? `${company.name} - ${product.name}` : 'Tidak Diketahui') : 'Perusahaan',
   }
 }
@@ -130,7 +130,7 @@ export default async function Page({ params, searchParams }: Props) {
     if (slug[2] === blog?.slug) {
       return <Blog content={blog.content} title={blog.title} />;
     } else if (slug[2] === product?.slug) {
-      return <Product name={product.name} description={product.description} variants={product.variants} />
+      return <Product product={product} />
     }
   }
   // return notFound();

@@ -1,93 +1,148 @@
-import React from "react";
-import {
-    Box,
-    Typography,
-    Grid,
-    Card,
-    CardMedia,
-    CardContent,
-    CardActions,
-    Button,
-    Rating
-} from "@mui/material";
+import * as React from 'react';
+import { Box, Grid, Typography, Card, CardContent, Chip, Button, Divider, Stack } from '@mui/material';
 
-// Contoh data rekomendasi
-const recommendations = [
-    {
-        id: 1,
-        image: "https://via.placeholder.com/150",
-        name: "Crispy Chicken Snack",
-        price: "Rp25.000",
-        rating: 4.5,
-    },
-    {
-        id: 2,
-        image: "https://via.placeholder.com/150",
-        name: "Local Honey Bottle",
-        price: "Rp45.000",
-        rating: 4,
-    },
-    {
-        id: 3,
-        image: "https://via.placeholder.com/150",
-        name: "Organic Herbal Drink",
-        price: "Rp30.000",
-        rating: 4.2,
-    },
-    {
-        id: 4,
-        image: "https://via.placeholder.com/150",
-        name: "Premium Coffee Beans",
-        price: "Rp60.000",
-        rating: 4.7,
-    }
-];
+// contoh data dari MongoDB (biasanya dari API)
+const product = {
+    name: 'Jasa Pemasaran Digital',
+    description:
+        'Layanan profesional untuk mempromosikan produk/layanan secara online menggunakan internet dan platform digital (media sosial, mesin pencari, email, dll.) untuk menjangkau pelanggan, meningkatkan kesadaran merek dan mendorong penjualan.',
+    type: 'jasa',
+    status: 'active',
+    variants: [
+        {
+            name: 'Pemula',
+            description: 'Paket Pemula',
+            price: 75000,
+            features: [
+                '1 Halaman website Company Profile',
+                'SEO',
+                'Google Ads',
+                'WhatsApp Chatbot',
+                'Email Ads',
+            ],
+        },
+        {
+            name: 'Profesional',
+            description: 'Paket Profesional',
+            price: 195000,
+            features: [
+                '1 Halaman website Company Profile',
+                'SEO',
+                'Meta Ads',
+                'Google Ads',
+                'TikTok Ads',
+                'WhatsApp Chatbot',
+                'Email Ads',
+            ],
+        },
+        {
+            name: 'Kustom',
+            description: 'Paket Kustom',
+            price: 300000,
+            features: [
+                'Halaman website Company Profile',
+                'SEO',
+                'Meta Ads',
+                'Google Ads',
+                'TikTok Ads',
+                'WhatsApp Chatbot',
+                'Email Ads',
+            ],
+        },
+    ],
+};
 
-export default function RecommendationSection() {
+export default function ProductDetailPage() {
     return (
-        <Box sx={{ py: 4, px: 2 }}>
-            {/* Judul Bagian */}
-            <Typography variant="h5" fontWeight="bold" sx={{ mb: 3 }}>
-                Rekomendasi Untukmu
-            </Typography>
+        <Box sx={{ p: { xs: 2, md: 4 }, maxWidth: 1200, mx: 'auto' }}>
+            {/* Header seperti Tokopedia */}
+            <Grid container spacing={4}>
+                <Grid size={{ xs: 12, md: 5 }}>
+                    <Box
+                        sx={{
+                            height: 320,
+                            borderRadius: 2,
+                            bgcolor: 'grey.100',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Typography color="text.secondary">Ilustrasi Jasa</Typography>
+                    </Box>
+                </Grid>
 
-            {/* Grid Produk */}
-            <Grid container spacing={3}>
-                {recommendations.map((product) => (
-                    <Grid size={{ xs: 12, md: 3, sm: 6 }} key={product.id}>
-                        <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-                            {/* Gambar Produk */}
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image={product.image}
-                                alt={product.name}
-                            />
-                            {/* Nama & Harga */}
-                            <CardContent sx={{ flexGrow: 1 }}>
-                                <Typography variant="subtitle1" gutterBottom>
-                                    {product.name}
-                                </Typography>
-                                <Typography variant="subtitle2" color="primary">
-                                    {product.price}
-                                </Typography>
-                                {/* Rating */}
-                                <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
-                                    <Rating value={product.rating} precision={0.1} readOnly size="small" />
-                                    <Typography variant="caption" sx={{ ml: 0.5 }}>
-                                        {product.rating}
-                                    </Typography>
-                                </Box>
-                            </CardContent>
-                            {/* CTA Button */}
-                            <CardActions>
-                                <Button size="small" variant="contained" fullWidth>
-                                    Beli Sekarang
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                ))}
+                <Grid size={{ xs: 12, md: 7 }}>
+                    <Stack spacing={2}>
+                        <Typography variant="h4" fontWeight={600}>
+                            {product.name}
+                        </Typography>
+
+                        <Stack direction="row" spacing={1}>
+                            <Chip label={product.type.toUpperCase()} color="primary" size="small" />
+                            <Chip label={product.status} color="success" size="small" />
+                        </Stack>
+
+                        <Typography variant="body1" color="text.secondary">
+                            {product.description}
+                        </Typography>
+
+                        <Divider />
+
+                        <Typography variant="subtitle1" fontWeight={600}>
+                            Pilih Paket
+                        </Typography>
+
+                        <Grid container spacing={2}>
+                            {product.variants.map((variant, index) => (
+                                <Grid size={{ xs: 12, md: 4 }} key={index}>
+                                    <Card
+                                        sx={{
+                                            height: '100%',
+                                            borderRadius: 2,
+                                            transition: '0.3s',
+                                            '&:hover': { boxShadow: 6 },
+                                        }}
+                                    >
+                                        <CardContent>
+                                            <Stack spacing={1.5}>
+                                                <Typography variant="h6" fontWeight={600}>
+                                                    {variant.name}
+                                                </Typography>
+
+                                                <Typography variant="body2" color="text.secondary">
+                                                    {variant.description}
+                                                </Typography>
+
+                                                <Typography variant="h5" color="primary" fontWeight={700}>
+                                                    Rp {variant.price.toLocaleString('id-ID')}
+                                                </Typography>
+
+                                                <Divider />
+
+                                                <Stack spacing={0.5}>
+                                                    {variant.features.map((feature, i) => (
+                                                        <Typography key={i} variant="body2">
+                                                            • {feature}
+                                                        </Typography>
+                                                    ))}
+                                                </Stack>
+
+                                                <Button
+                                                    variant="contained"
+                                                    fullWidth
+                                                    sx={{ mt: 1, borderRadius: 2 }}
+                                                >
+                                                    Pilih Paket
+                                                </Button>
+                                            </Stack>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Stack>
+                </Grid>
             </Grid>
         </Box>
     );

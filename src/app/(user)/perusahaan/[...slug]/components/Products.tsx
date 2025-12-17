@@ -44,7 +44,7 @@ export default function Products({ products, company }: { products: any[], compa
                 {
                     products.map(
                         (p: any, index: any) =>
-                            company._id === p.corpId && (
+                            company._id === p.companyId && (
                                 <Grid size={{ xs: 12, md: 4 }} key={index}>
                                     {/* <iframe
                                         loading="lazy"

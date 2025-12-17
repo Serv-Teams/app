@@ -1,89 +1,102 @@
 'use client';
 
-import { useState } from "react";
-import { Box, Card, CardContent, Chip, Grid, Typography } from "@mui/material";
+import * as React from 'react';
+import { Box, Grid, Typography, Card, CardContent, Chip, Button, Divider, Stack } from '@mui/material';
 
-export default function Product({ name, description, variants }: { name: any; description: any; variants: any[] }) {
-
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-    const toggleOpen = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
-
-
-
+export default function Product(
+    // { name, description, variants }: { name: any; description: any; variants: any[] }
+    { product }: { product: any }
+) {
     return (
-        <Grid container spacing={2} columns={12}>
-            <Grid size={{ xs: 12 }}>
-                <Card>
-                    {/* <Box
-                        component="iframe"
-                        src={img}
-                        title={description}
-                        allowFullScreen
+        <Box sx={{ p: { xs: 2, md: 4 }, maxWidth: 1200, mx: 'auto' }}>
+            {/* Header seperti Tokopedia */}
+            <Grid container spacing={4}>
+                <Grid size={{ xs: 12, md: 5 }}>
+                    <Box
                         sx={{
-                            width: '100%',
-                            // height: { sm: 'auto', md: '50%' },
-                            // aspectRatio: { sm: '16 / 9', md: '' },
-                            border: 'none',
-                            // borderBottom: '1px solid',
-                            borderLeft: '1px solid',
-                            borderRight: '1px solid',
-                            borderTop: '1px solid',
-                            borderColor: 'divider',
-                            // objectFit: 'cover',
-                            height: 200,
+                            height: 320,
+                            borderRadius: 2,
+                            bgcolor: 'grey.100',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
                         }}
-                    /> */}
-                    <CardContent>
-                        <Typography variant="h5" gutterBottom>
-                            {name}
-                        </Typography>
-                        <Typography variant="body1" gutterBottom>
-                            {description}
-                        </Typography>
-                        <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
-                            Varian Produk
-                        </Typography>
-                        {
-                            variants.map((v: any, index: any) => (
-                                <Box key={index} sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
-                                    {/* <Typography variant="h6">{v.name}</Typography> */}
-                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                        <Typography variant="h6">{v.name}</Typography>
+                    >
+                        <Typography color="text.secondary">Ilustrasi Jasa</Typography>
+                    </Box>
+                </Grid>
 
-                                        <Chip
-                                            label={openIndex === index ? "Tutup" : "Lihat"}
-                                            color={openIndex === index ? "secondary" : "primary"}
-                                            clickable
-                                            onClick={() => toggleOpen(index)}
-                                        />
-                                    </Box>
+                <Grid size={{ xs: 12, md: 7 }}>
+                    <Stack spacing={2}>
+                        <Typography variant="h4" fontWeight={600}>
+                            {product.name}
+                        </Typography>
 
-                                    {openIndex === index && (
-                                        <>
-                                            <Typography variant="body2" sx={{ color: "text.secondary", mt: 1 }}>
-                                                {v.description}
-                                            </Typography>
+                        <Stack direction="row" spacing={1}>
+                            <Chip label={product.type.toUpperCase()} color="primary" size="small" />
+                        </Stack>
 
-                                            {v.features.map((feature: any, fIndex: number) => (
-                                                <Typography key={fIndex} variant="body2" sx={{ mt: 1 }}>
-                                                    - {feature}
+                        <Typography variant="body1" color="text.secondary">
+                            {product.description}
+                        </Typography>
+
+                        <Divider />
+
+                        <Typography variant="subtitle1" fontWeight={600}>
+                            Pilih Paket
+                        </Typography>
+
+                        <Grid container spacing={2}>
+                            {product.variants.map((variant: any, index: any) => (
+                                <Grid size={{ xs: 12, md: 4 }} key={index}>
+                                    <Card
+                                        sx={{
+                                            height: '100%',
+                                            borderRadius: 2,
+                                            transition: '0.3s',
+                                            '&:hover': { boxShadow: 6 },
+                                        }}
+                                    >
+                                        <CardContent>
+                                            <Stack spacing={1.5}>
+                                                <Typography variant="h6" fontWeight={600}>
+                                                    {variant.name}
                                                 </Typography>
-                                            ))}
 
-                                            <Typography variant="subtitle1" sx={{ mt: 1 }}>
-                                                Harga: {v.price}
-                                            </Typography>
-                                        </>
-                                    )}
-                                </Box>
-                            ))
-                        }
-                    </CardContent>
-                </Card>
+                                                <Typography variant="body2" color="text.secondary">
+                                                    {variant.description}
+                                                </Typography>
+
+                                                <Typography variant="h5" color="primary" fontWeight={700}>
+                                                    Rp {variant.price.toLocaleString('id-ID')}
+                                                </Typography>
+
+                                                <Divider />
+
+                                                <Stack spacing={0.5}>
+                                                    {variant.features.map((feature: any, i: any) => (
+                                                        <Typography key={i} variant="body2">
+                                                            • {feature}
+                                                        </Typography>
+                                                    ))}
+                                                </Stack>
+
+                                                <Button
+                                                    variant="contained"
+                                                    fullWidth
+                                                    sx={{ mt: 1, borderRadius: 2 }}
+                                                >
+                                                    Pilih Paket
+                                                </Button>
+                                            </Stack>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Stack>
+                </Grid>
             </Grid>
-        </Grid>
-    )
+        </Box>
+    );
 }
