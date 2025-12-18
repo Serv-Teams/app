@@ -1,42 +1,3 @@
-// import { getProfile } from "@/actions/perusahaan/Profile"
-// import { notFound } from "next/navigation"
-
-// export default async function Page({
-//     params,
-// }: {
-//     params: Promise<{ slug: string }>
-// }) {
-//     const { slug } = await params
-//     const data = JSON.parse(JSON.stringify(await getProfile(slug)))
-
-//     if (!data) {
-//         notFound()
-//     }
-
-//     return <div>
-//         My blog: {slug}
-//     </div>
-// }
-
-// import { getCachedCorpProfiles } from "@/actions/perusahaan/Profile"
-
-// export default async function Page() {
-//     const corpProfiles = JSON.parse(JSON.stringify(await getCachedCorpProfiles()))
-
-//     return (
-//         <div>
-//             {
-//                 corpProfiles.map((p: any) => (
-//                     <div key={p._id}>
-//                         <h2>{p.name}</h2>
-//                         <p>{p.description}</p>
-//                     </div>
-//                 ))
-//             }
-//         </div>
-//     )
-// }
-
 import * as React from "react";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
@@ -116,22 +77,19 @@ export default async function Page({ params, searchParams }: Props) {
       return (
         <Blogs blogs={blogs} companyId={company._id} slug={company.slug} />
       );
-    }
-    else {
+    } else {
       notFound();
     }
   } else if (slug.length === 3) {
     const blog = JSON.parse(JSON.stringify(await getBlog(slug[2])));
     const product = JSON.parse(JSON.stringify(await getProduct(slug[2])));
-    if (slug[2] !== blog?.slug && slug[2] !== product?.slug) {
-      notFound();
-    }
 
     if (slug[2] === blog?.slug) {
       return <Blog content={blog.content} title={blog.title} />;
     } else if (slug[2] === product?.slug) {
       return <Product product={product} />
+    } else {
+      notFound();
     }
   }
-  // return notFound();
 }
