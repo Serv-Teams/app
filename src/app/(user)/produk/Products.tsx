@@ -106,7 +106,7 @@ export default function Produk(
                                     </CardContent>
                                     {/* CTA Button */}
                                     <CardActions>
-                                        <Button component={Link} href="/halaman-tujuan" size="small" variant="contained" fullWidth>
+                                        <Button component={Link} href={`/perusahaan/${company.slug}/produk/${product.slug}`} size="small" variant="contained" fullWidth>
                                             Kunjungi
                                         </Button>
                                     </CardActions>
