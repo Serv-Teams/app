@@ -170,10 +170,10 @@ export default function Footer() {
                         <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                             Perusahaan
                         </Typography>
-                        <Link color="text.secondary" variant="body2" href="https://serv-agency.vercel.app/tentang-kami">
+                        <Link color="text.secondary" variant="body2" href="https://serv-marketplace.vercel.app/tentang-kami">
                             Tentang Kami
                         </Link>
-                        <Link color="text.secondary" variant="body2" href="https://serv-aagency.vercel.app">
+                        <Link color="text.secondary" variant="body2" href="https://serv-marketplace.vercel.app/bisnis">
                             Bisnis
                         </Link>
                     </Box>

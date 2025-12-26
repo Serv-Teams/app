@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://serv-agency.vercel.app/sitemap.xml',
+        sitemap: 'https://serv-marketplace.vercel.app/sitemap.xml',
     }
 }
